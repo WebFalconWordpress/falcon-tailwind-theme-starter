@@ -8,6 +8,8 @@ Thumbs.db
 .idea
 .vscode
 .vs
+node_modules
+package-lock.json
 
 # wpengine specific
 .smushit-status
@@ -16,17 +18,6 @@ _wpeprivate*
 .wpe-devkit
 .wpengine-conf
 /local-xdebuginfo.php
-
-#tailwind and tailpress specifics and other specific to Web Falcon flow
-node_modules
-.idea
-.vscode
-.vs
-assets/css/app.css
-assets/css/editor-style.css
-assets/js/app.js
-mix-manifest.json
-package-lock.json
 
 
 # large/disallowed file types
