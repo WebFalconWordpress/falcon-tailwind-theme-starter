@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Sidebar
- * Slug: pubcalls/hidden-sidebar
+ * Slug: falcontwstarter/hidden-sidebar
  * Inserter: no
  */
 ?>

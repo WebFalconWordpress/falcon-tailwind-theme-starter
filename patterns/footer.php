@@ -2,7 +2,7 @@
 
 /**
  * Title: Footer  default
- * Slug: pubcalls/footer
+ * Slug: falcontwstarter/footer
  * Categories: footer
  */
 ?>

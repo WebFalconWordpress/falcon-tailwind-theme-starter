@@ -3,12 +3,12 @@
 /**
  * Theme setup.
  */
-function pubcalls_setup() { 
+function falcontwstarter_setup() { 
 
 	// remove_theme_support('core-block-patterns');
 
 	// Load translations for This template
-	load_theme_textdomain('pubcalls', get_template_directory() . '/languages');
+	load_theme_textdomain('falcontwstarter', get_template_directory() . '/languages');
 	 
 	// This feature allows themes to add document title tag to HTML <head>.
 	add_theme_support( 'title-tag' );
@@ -36,25 +36,25 @@ function pubcalls_setup() {
 	// Registers navigation menu locations for a theme.
 	register_nav_menus(
 		array(
-			'primary' => __( 'Primary Menu', 'pubcalls' ),
+			'primary' => __( 'Primary Menu', 'falcontwstarter' ),
 		)    
 	);	
  
 }
 
-add_action( 'after_setup_theme', 'pubcalls_setup' );
+add_action( 'after_setup_theme', 'falcontwstarter_setup' );
  
 /**
  * Enqueue theme assets.
  */
-function pubcalls_enqueue_scripts() {
+function falcontwstarter_enqueue_scripts() {
 	$theme = wp_get_theme();
 
-	wp_enqueue_style( 'pubcalls', pubcalls_asset( 'assets/css/app.css' ), array(), $theme->get( 'Version' ) );
-	wp_enqueue_script( 'pubcalls', pubcalls_asset( 'assets/js/app.js' ), array(), $theme->get( 'Version' ) );
+	wp_enqueue_style( 'falcontwstarter', falcontwstarter_asset( 'assets/css/app.css' ), array(), $theme->get( 'Version' ) );
+	wp_enqueue_script( 'falcontwstarter', falcontwstarter_asset( 'assets/js/app.js' ), array(), $theme->get( 'Version' ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'pubcalls_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'falcontwstarter_enqueue_scripts' );
 
 
 /**
@@ -64,7 +64,7 @@ add_action( 'wp_enqueue_scripts', 'pubcalls_enqueue_scripts' );
  *
  * @return string
  */
-function pubcalls_asset( $path ) {
+function falcontwstarter_asset( $path ) {
 	if ( wp_get_environment_type() === 'production' ) {
 		return get_stylesheet_directory_uri() . '/' . $path;
 	}
@@ -81,7 +81,7 @@ function pubcalls_asset( $path ) {
  *
  * @return array
  */
-function pubcalls_nav_menu_add_li_class( $classes, $item, $args, $depth ) {
+function falcontwstarter_nav_menu_add_li_class( $classes, $item, $args, $depth ) {
 	if ( isset( $args->li_class ) ) {
 		$classes[] = $args->li_class;
 	}
@@ -93,7 +93,7 @@ function pubcalls_nav_menu_add_li_class( $classes, $item, $args, $depth ) {
 	return $classes;
 }
 
-add_filter( 'nav_menu_css_class', 'pubcalls_nav_menu_add_li_class', 10, 4 );
+add_filter( 'nav_menu_css_class', 'falcontwstarter_nav_menu_add_li_class', 10, 4 );
 
 /**
  * Adds option 'submenu_class' to 'wp_nav_menu'.
@@ -104,7 +104,7 @@ add_filter( 'nav_menu_css_class', 'pubcalls_nav_menu_add_li_class', 10, 4 );
  *
  * @return array
  */
-function pubcalls_nav_menu_add_submenu_class( $classes, $args, $depth ) {
+function falcontwstarter_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 	if ( isset( $args->submenu_class ) ) {
 		$classes[] = $args->submenu_class;
 	}
@@ -117,20 +117,20 @@ function pubcalls_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 }
 
 // We add this option in order to be able to add classes to the <li> elements of the menu and that way we can use the Tailwind CSS classes to style the menu easier.
-add_filter( 'nav_menu_submenu_css_class', 'pubcalls_nav_menu_add_submenu_class', 10, 3 );
+add_filter( 'nav_menu_submenu_css_class', 'falcontwstarter_nav_menu_add_submenu_class', 10, 3 );
 
 /**
  * Register pattern categories.
  */
 
- if ( ! function_exists( 'pubcalls_pattern_categories' ) ) :
+ if ( ! function_exists( 'falcontwstarter_pattern_categories' ) ) :
 	/**
 	 * Register pattern categories
 	 *
 	 * @since Falcon Tailwind Theme 1.0.0
 	 * @return void
 	 */
-	function pubcalls_pattern_categories() {
+	function falcontwstarter_pattern_categories() {
 
 		register_block_pattern_category(
 			'page',
@@ -142,4 +142,4 @@ add_filter( 'nav_menu_submenu_css_class', 'pubcalls_nav_menu_add_submenu_class',
 	}
 endif;
 
-add_action( 'init', 'pubcalls_pattern_categories' );
+add_action( 'init', 'falcontwstarter_pattern_categories' );

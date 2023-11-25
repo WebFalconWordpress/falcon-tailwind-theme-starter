@@ -2,7 +2,7 @@
 
 /**
  * Title: Falcon Tailwind Default Posts 3 Columns
- * Slug: pubcalls/posts-3-columns
+ * Slug: falcontwstarter/posts-3-columns
  * Categories: posts
  */
 ?>
@@ -24,7 +24,7 @@
 			<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"spacing":{"margin":{"bottom":"0"},"padding":{"bottom":"var:preset|spacing|20"}},"color":{"duotone":"unset"}}} /-->
 
 			<!-- wp:group {"className":"flex gap-2 mt-2 pt-0 flex-nowrap flex-col items-start"} -->
-			<div class="flex flex-col items-start gap-2 pt-0 mt-2 wp-block-group flex-nowrap"><!-- wp:template-part {"slug":"post-meta","theme":"pubcalls"} /-->
+			<div class="flex flex-col items-start gap-2 pt-0 mt-2 wp-block-group flex-nowrap"><!-- wp:template-part {"slug":"post-meta","theme":"falcontwstarter"} /-->
 
 				<!-- wp:post-title {"level":3,"isLink":true,"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0","left":"0","right":"0"}}}} /-->
 

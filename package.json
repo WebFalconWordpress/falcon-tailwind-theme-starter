@@ -1,15 +1,15 @@
 {
-	"name": "pubcalls",
+	"name": "falcontwstarter",
 	"version": "1.0.0",
 	"description": "This is a WordPress Block theme built with Tailwind CSS with full Gutenberg support.",
 	"author": "Web Falcon",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/username/pubcalls"
+		"url": "https://github.com/username/falcontwstarter"
 	},
-	"theme_uri": "https://github.com/username/pubcalls",
+	"theme_uri": "https://github.com/username/falcontwstarter",
 	"author_uri": "https://webfalcon.me",
-	"text_domain": "pubcalls",
+	"text_domain": "falcontwstarter",
 	"license": "MIT",
 	"scripts": {
 		"production:css-app": "cross-env NODE_ENV=development tailwindcss -i ./resources/css/app.css -o ./assets/css/app.css --postcss --minify",
@@ -28,7 +28,7 @@
 		"watch-sync": "cross-env NODE_ENV=development concurrently \"npm run browser-sync\" \"npm run watch\""
 	},
 	"devDependencies": {
-		"@webfalconwordpress/tailwindcss-tailpress-updated": "2.0.5",
+		"@webfalconwordpress/tailwindcss-falcon-tailwind-plugin": "1.0.0",
 		"autoprefixer": "^10.4.16",
 		"browser-sync": "^2.29.3",
 		"cross-env": "^7.0.3",

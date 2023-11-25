@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default home template
- * Slug: pubcalls/template-home-default
+ * Slug: falcontwstarter/template-home-default
  * Template Types: front-page, home
  * Viewport width: 1400
  * Inserter: no
@@ -12,7 +12,7 @@
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"blockGap":"0","margin":{"top":"0"}}},"layout":{"type":"default"}} -->
 <main class="wp-block-group" style="margin-top:0">
-	<!-- wp:pattern {"slug":"pubcalls/page-home-default"} /-->
+	<!-- wp:pattern {"slug":"falcontwstarter/page-home-default"} /-->
 </main>
 <!-- /wp:group -->
 

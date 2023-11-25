@@ -49,15 +49,15 @@ POT file is allready generated. If you want to update it here are the commands. 
 
 MAKE POT - Postion yourself in theme folder
 ```
-wp i18n make-pot --exclude=*.json --domain=pubcalls . languages/pubcalls.pot
+wp i18n make-pot --exclude=*.json --domain=falcontwstarter . languages/falcontwstarter.pot
 ```
 
 UPDATE PO FILES - make sure you are positioned in theme folder
 ```
-wp i18n update-po "languages/pubcalls.pot" "languages/pubcalls-bs_BA.po"
+wp i18n update-po "languages/falcontwstarter.pot" "languages/falcontwstarter-bs_BA.po"
 ```
 
 UPDATE MO - make sure you are positioned in languages folder
 ```
-wp i18n make-mo "languages/pubcalls-bs_BA.po"
+wp i18n make-mo "languages/falcontwstarter-bs_BA.po"
 ```

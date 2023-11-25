@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Hero
- * Slug: pubcalls/banner-hero
+ * Slug: falcontwstarter/banner-hero
  * Categories: banner, call-to-action, featured
  * Viewport width: 1400
  */

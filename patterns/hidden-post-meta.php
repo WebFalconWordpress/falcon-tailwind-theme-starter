@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Post meta
- * Slug: pubcalls/hidden-post-meta
+ * Slug: falcontwstarter/hidden-post-meta
  * Inserter: no
  */
 ?>
@@ -15,14 +15,14 @@
 		<!-- wp:group {"style":{"spacing":{"blockGap":"0.3em"}},"layout":{"type":"flex","justifyContent":"left"}} -->
 		<div >
 			<!-- wp:paragraph -->
-			<p ><?php echo esc_html_x( 'by', 'Prefix for the post author block: By author name', 'pubcalls' ); ?></p>
+			<p ><?php echo esc_html_x( 'by', 'Prefix for the post author block: By author name', 'falcontwstarter' ); ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:post-author-name {"isLink":true} /-->
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:post-terms {"term":"category","prefix":"<?php echo esc_html_x( 'in ', 'Prefix for the post category block: in category name', 'pubcalls' ); ?>"} /-->
+		<!-- wp:post-terms {"term":"category","prefix":"<?php echo esc_html_x( 'in ', 'Prefix for the post category block: in category name', 'falcontwstarter' ); ?>"} /-->
 
 	</div>
 	<!-- /wp:group -->

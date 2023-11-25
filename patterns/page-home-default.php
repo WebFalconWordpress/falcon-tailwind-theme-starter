@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default home
- * Slug: pubcalls/page-home-default
+ * Slug: falcontwstarter/page-home-default
  * Categories: page
  * Keywords: starter
  * Block Types: core/post-content
@@ -10,6 +10,6 @@
  */
 ?>
 
-<!-- wp:pattern {"slug":"pubcalls/banner-hero"} /-->
+<!-- wp:pattern {"slug":"falcontwstarter/banner-hero"} /-->
 
 <!-- PUT HERE AS MANNY PATTERNS AS YOU WANT -->

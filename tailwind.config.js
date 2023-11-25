@@ -1,5 +1,5 @@
 const theme = require('./theme.json');
-const tailpress = require("@webfalconwordpress/tailwindcss-tailpress-updated");
+const falconTailwind = require("@webfalconwordpress/tailwindcss-falcon-tailwind-plugin");
 
 // https://github.com/tailwindlabs/tailwindcss/discussions/6256
 // ...(process.env.NODE_ENV == 'development') && { safelist: [ { pattern: /.*/ },
@@ -20,8 +20,8 @@ module.exports = {
     ],
     theme: {
         extend: {
-            colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
-            fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme))
+            colors: falconTailwind.colorMapper(falconTailwind.theme('settings.color.palette', theme)), 
+            fontSize: falconTailwind.fontSizeMapper(falconTailwind.theme('settings.typography.fontSizes', theme))
         },
 
         // Those are the breakpoints for all screens. They are following Tailwind's default breakpoints except for xs screen which is added here.
@@ -35,7 +35,7 @@ module.exports = {
         }
     },
     plugins: [
-        tailpress.tailwind,
+        falconTailwind.tailwind,
         require('flowbite/plugin'),
 
         // This custom plugin adds a container class. Content width inside the containers are following bootstrap's breakpoints. Designer should use these breakpoints when designing the site.
