@@ -1,0 +1,20 @@
+
+/* 
+    This is fix when using alignfull class since this is causing horisontal scrolling
+*/
+main {
+    overflow-x: hidden;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* 
+    Sticky footer
+*/
+.wp-site-blocks {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
