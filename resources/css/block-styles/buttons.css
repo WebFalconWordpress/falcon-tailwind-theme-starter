@@ -1,0 +1,96 @@
+/* These buttons are Style Variations definded ind editor-styles.js */
+.wp-block-buttons {
+
+    .is-style-cta-medium-outline,
+    .is-style-cta-dark-outline,
+    .is-style-cta-light-outline,
+    .is-style-cta-medium,
+    .is-style-cta-dark,
+    .is-style-cta-light {
+
+        .wp-element-button.wp-block-button__link {
+            @apply px-5 py-2.5 leading-tight text-sm;
+        }
+    }
+
+    .is-style-cta-light {
+        .wp-element-button.wp-block-button__link {
+            @apply bg-PrplBlue-500 border-PrplBlue-500;
+        }
+
+        .wp-element-button.wp-block-button__link:hover {
+            @apply bg-contrast3 border-contrast3;
+        }
+
+    }
+
+    .is-style-cta-light-outline {
+        .wp-element-button.wp-block-button__link {
+            @apply bg-transparent border-PrplBlue-500 text-PrplBlue-500;
+        }
+
+        .wp-element-button.wp-block-button__link:hover {
+            @apply bg-transparent border-contrast2 text-contrast2;
+        }
+    }
+
+    .is-style-cta-medium {
+        .wp-element-button.wp-block-button__link {
+            @apply bg-contrast3 border-contrast3;
+        }
+        
+        .wp-element-button.wp-block-button__link:hover {
+            @apply bg-contrast2 border-contrast2;
+        }
+    }
+
+    .is-style-cta-medium-outline {
+        .wp-element-button.wp-block-button__link {
+            @apply bg-transparent border-contrast3 text-contrast3;
+        }
+        
+        .wp-element-button.wp-block-button__link:hover {
+            @apply bg-transparent border-contrast2 text-contrast2;
+        }
+    }
+
+    .is-style-cta-dark {
+
+        .wp-element-button.wp-block-button__link {
+            @apply bg-contrast2 border-contrast2;
+        }
+
+        .wp-element-button.wp-block-button__link:hover {
+            @apply bg-contrast3 border-contrast3;
+        }
+    }
+
+    .is-style-cta-dark-outline {
+
+        .wp-element-button.wp-block-button__link {
+            @apply bg-transparent border-contrast2 text-contrast2;
+        }
+
+        .wp-element-button.wp-block-button__link:hover {
+            @apply bg-transparent border-contrast3 text-contrast3;
+        }
+    }
+
+
+    .is-style-alternative {
+        .wp-element-button.wp-block-button__link {
+            @apply bg-contrast3 border-contrast3;
+        }
+        
+        .wp-element-button.wp-block-button__link:hover {
+            @apply bg-contrast2 border-contrast2;
+        }
+    }
+
+    .is-style-outline {
+        .wp-element-button.wp-block-button__link:hover {
+            @apply  border-PrplBlue-500 text-PrplBlue-500;
+        }
+    }
+
+}

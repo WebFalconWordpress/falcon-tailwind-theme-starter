@@ -5,7 +5,7 @@
  */
 function falcontwstarter_setup() { 
 
-	// remove_theme_support('core-block-patterns');
+	wp_enqueue_style( 'falcontwstarter_normalizer', falcontwstarter_asset( 'assets/css/wordpress-normalizer.css' ) );
 
 	// Load translations for This template
 	load_theme_textdomain('falcontwstarter', get_template_directory() . '/languages');
@@ -44,6 +44,32 @@ function falcontwstarter_setup() {
 
 add_action( 'after_setup_theme', 'falcontwstarter_setup' );
  
+
+
+add_action( 'enqueue_block_editor_assets', 'apply_gutenberg_block_changes' );
+
+function apply_gutenberg_block_changes() {
+
+
+	// Register block variations 
+	wp_enqueue_script('custom-block-variations-editor',
+		get_theme_file_uri('assets/js/editor-variations.js'),
+		['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
+		filemtime(get_theme_file_path('assets/js/editor-variations.js')),
+		true
+	);
+
+	// Register block styles
+	wp_enqueue_script('custom-block-styles-editor',
+		get_theme_file_uri('assets/js/editor-styles.js'),
+		['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
+		filemtime(get_theme_file_path('assets/js/editor-styles.js'))
+	);
+
+}
+
+
+
 /**
  * Enqueue theme assets.
  */

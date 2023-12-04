@@ -9,6 +9,6 @@ module.exports = {
         "change" 
     ],
     "proxy": {
-        target: "https://pozivi.local/" // Enter your local WP URL here
+        target: "https://falconstarter.local/" // Enter your local WP URL here
     },
 };

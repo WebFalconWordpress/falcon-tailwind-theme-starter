@@ -7,14 +7,14 @@
 ?>
 
 <!-- wp:comments {"className":"wp-block-comments-query-loop"} -->
-<div class="wp-block-comments my-8 wp-block-comments-query-loop">
+<div class="my-8 wp-block-comments wp-block-comments-query-loop">
 	<!-- wp:heading -->
 	<h2><?php esc_html_e( 'Comments', 'falcontwstarter' ); ?></h2>
 	<!-- /wp:heading -->
 	<!-- wp:comments-title {"level":3} /-->
 	<!-- wp:comment-template -->
-	<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|30"}}}} -->
-	<div class="wp-block-group" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--30)">
+	<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|3"}}}} -->
+	<div class="wp-block-group" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--3)">
 		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"0.5em"}}} -->
 		<div class="wp-block-group">
 			<!-- wp:avatar {"size":40} /-->

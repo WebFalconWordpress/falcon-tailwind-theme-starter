@@ -1,9 +1,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "block-styles/buttons.css";
 
-body {
-    @apply font-sans;
-}
 
 .wp-block{
     @apply max-w-screen-xl;
