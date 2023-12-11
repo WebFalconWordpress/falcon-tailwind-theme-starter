@@ -114,11 +114,11 @@
   --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: #1064F2;
+  --tw-ring-color: #1C64F2;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  border-color: #1064F2;
+  border-color: #1C64F2;
 }
 
 input::-moz-placeholder, textarea::-moz-placeholder {
@@ -175,7 +175,7 @@ select:not([size]) {
   flex-shrink: 0;
   height: 1rem;
   width: 1rem;
-  color: #1064F2;
+  color: #1C64F2;
   background-color: #fff;
   border-color: #6B7280;
   border-width: 1px;
@@ -196,7 +196,7 @@ select:not([size]) {
   --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
   --tw-ring-offset-width: 2px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: #1064F2;
+  --tw-ring-color: #1C64F2;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -275,7 +275,7 @@ input[type=file]::file-selector-button:hover {
 input[type="range"]::-webkit-slider-thumb {
   height: 1.25rem;
   width: 1.25rem;
-  background: #1064F2;
+  background: #1C64F2;
   border-radius: 9999px;
   border: 0;
   appearance: none;
@@ -301,7 +301,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
 input[type="range"]::-moz-range-thumb {
   height: 1.25rem;
   width: 1.25rem;
-  background: #1064F2;
+  background: #1C64F2;
   border-radius: 9999px;
   border: 0;
   appearance: none;
@@ -499,15 +499,15 @@ input[type="range"]::-ms-fill-lower {
   .container {
     padding-left: 40px;
     padding-right: 40px;
-    max-width: 1200px;
+    max-width: 1280px;
   }
 }
 
 @media (min-width: 1536px) {
   .container {
-    padding-left: 68px;
-    padding-right: 68px;
-    max-width: 1400px;
+    padding-left: 80px;
+    padding-right: 80px;
+    max-width: 1440px;
   }
 }
 
@@ -810,12 +810,9 @@ input[type="range"]::-ms-fill-lower {
   letter-spacing: -0.025em;
 }
 
-.text-base {
-  color: var(--wp--preset--color--base);
-}
-
 .text-contrast {
-  color: var(--wp--preset--color--contrast);
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .text-gray-500 {
@@ -917,31 +914,18 @@ input[type="range"]::-ms-fill-lower {
   color: #4B5563;
 }
 
-/* 
-    This is fix when using alignfull class since this is causing horisontal scrolling
-*/
-
-main {
-  overflow-x: hidden;
-}
-
-html, body {
-  height: 100%;
-}
-
-/* 
-    Sticky footer
-*/
-
-.wp-site-blocks {
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
 /* These buttons are Style Variations definded ind editor-styles.js */
 
-.wp-block-buttons .is-style-cta-medium-outline .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-cta-dark-outline .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-cta-light-outline .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-cta-medium .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-cta-dark .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-cta-light .wp-element-button.wp-block-button__link {
+/* This is style needed for default outline style since we don't have hover on it by default */
+
+.wp-block-buttons .is-style-outline .wp-element-button.wp-block-button__link:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(15 168 218 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(15 168 218 / var(--tw-text-opacity));
+}
+
+.wp-block-buttons .is-style-alternative .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-alternative-outline .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-cta-outline .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-cta .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-link .wp-element-button.wp-block-button__link {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   padding-top: 0.625rem;
@@ -951,91 +935,145 @@ html, body {
   line-height: 1.25;
 }
 
-.wp-block-buttons .is-style-cta-light .wp-element-button.wp-block-button__link {
+.wp-block-buttons .is-style-cta .wp-element-button.wp-block-button__link {
   --tw-border-opacity: 1;
-  border-color: rgb(157 149 250 / var(--tw-border-opacity));
+  border-color: rgb(15 168 218 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(157 149 250 / var(--tw-bg-opacity));
+  background-color: rgb(15 168 218 / var(--tw-bg-opacity));
 }
 
-.wp-block-buttons .is-style-cta-light .wp-element-button.wp-block-button__link:hover {
-  border-color: var(--wp--preset--color--contrast-3);
-  background-color: var(--wp--preset--color--contrast-3);
-}
-
-.wp-block-buttons .is-style-cta-light-outline .wp-element-button.wp-block-button__link {
+.wp-block-buttons .is-style-cta .wp-element-button.wp-block-button__link:hover {
   --tw-border-opacity: 1;
-  border-color: rgb(157 149 250 / var(--tw-border-opacity));
+  border-color: rgb(26 86 219 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 86 219 / var(--tw-bg-opacity));
+}
+
+.wp-block-buttons .is-style-cta-outline .wp-element-button.wp-block-button__link {
+  --tw-border-opacity: 1;
+  border-color: rgb(15 168 218 / var(--tw-border-opacity));
   background-color: transparent;
   --tw-text-opacity: 1;
-  color: rgb(157 149 250 / var(--tw-text-opacity));
+  color: rgb(15 168 218 / var(--tw-text-opacity));
 }
 
-.wp-block-buttons .is-style-cta-light-outline .wp-element-button.wp-block-button__link:hover {
-  border-color: var(--wp--preset--color--contrast-2);
+.wp-block-buttons .is-style-cta-outline .wp-element-button.wp-block-button__link:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(26 86 219 / var(--tw-border-opacity));
   background-color: transparent;
-  color: var(--wp--preset--color--contrast-2);
-}
-
-.wp-block-buttons .is-style-cta-medium .wp-element-button.wp-block-button__link {
-  border-color: var(--wp--preset--color--contrast-3);
-  background-color: var(--wp--preset--color--contrast-3);
-}
-
-.wp-block-buttons .is-style-cta-medium .wp-element-button.wp-block-button__link:hover {
-  border-color: var(--wp--preset--color--contrast-2);
-  background-color: var(--wp--preset--color--contrast-2);
-}
-
-.wp-block-buttons .is-style-cta-medium-outline .wp-element-button.wp-block-button__link {
-  border-color: var(--wp--preset--color--contrast-3);
-  background-color: transparent;
-  color: var(--wp--preset--color--contrast-3);
-}
-
-.wp-block-buttons .is-style-cta-medium-outline .wp-element-button.wp-block-button__link:hover {
-  border-color: var(--wp--preset--color--contrast-2);
-  background-color: transparent;
-  color: var(--wp--preset--color--contrast-2);
-}
-
-.wp-block-buttons .is-style-cta-dark .wp-element-button.wp-block-button__link {
-  border-color: var(--wp--preset--color--contrast-2);
-  background-color: var(--wp--preset--color--contrast-2);
-}
-
-.wp-block-buttons .is-style-cta-dark .wp-element-button.wp-block-button__link:hover {
-  border-color: var(--wp--preset--color--contrast-3);
-  background-color: var(--wp--preset--color--contrast-3);
-}
-
-.wp-block-buttons .is-style-cta-dark-outline .wp-element-button.wp-block-button__link {
-  border-color: var(--wp--preset--color--contrast-2);
-  background-color: transparent;
-  color: var(--wp--preset--color--contrast-2);
-}
-
-.wp-block-buttons .is-style-cta-dark-outline .wp-element-button.wp-block-button__link:hover {
-  border-color: var(--wp--preset--color--contrast-3);
-  background-color: transparent;
-  color: var(--wp--preset--color--contrast-3);
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
 }
 
 .wp-block-buttons .is-style-alternative .wp-element-button.wp-block-button__link {
-  border-color: var(--wp--preset--color--contrast-3);
-  background-color: var(--wp--preset--color--contrast-3);
+  --tw-border-opacity: 1;
+  border-color: rgb(26 86 219 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 86 219 / var(--tw-bg-opacity));
 }
 
 .wp-block-buttons .is-style-alternative .wp-element-button.wp-block-button__link:hover {
-  border-color: var(--wp--preset--color--contrast-2);
-  background-color: var(--wp--preset--color--contrast-2);
+  --tw-border-opacity: 1;
+  border-color: rgb(15 168 218 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 168 218 / var(--tw-bg-opacity));
 }
 
-.wp-block-buttons .is-style-outline .wp-element-button.wp-block-button__link:hover {
+.wp-block-buttons .is-style-alternative-outline .wp-element-button.wp-block-button__link {
   --tw-border-opacity: 1;
-  border-color: rgb(157 149 250 / var(--tw-border-opacity));
+  border-color: rgb(26 86 219 / var(--tw-border-opacity));
+  background-color: transparent;
   --tw-text-opacity: 1;
-  color: rgb(157 149 250 / var(--tw-text-opacity));
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+}
+
+.wp-block-buttons .is-style-alternative-outline .wp-element-button.wp-block-button__link:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(15 168 218 / var(--tw-border-opacity));
+  background-color: transparent;
+  --tw-text-opacity: 1;
+  color: rgb(15 168 218 / var(--tw-text-opacity));
+}
+
+.wp-block-buttons .is-style-link .wp-element-button.wp-block-button__link {
+  cursor: pointer;
+  border-width: 0px;
+  background-color: transparent;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(15 168 218 / var(--tw-text-opacity));
+  text-decoration-line: underline;
+  text-underline-offset: 6px;
+}
+
+.wp-block-buttons .is-style-link .wp-element-button.wp-block-button__link:hover {
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+}
+
+/* 
+ *
+ * PUT HERE CSS THAT ARE CONNECTED WITH SOME PATTERN THAT YOU CREATED AND YOU CANNOT PUT THEM IN PATTERN CSS FILE FOR SOME REASON
+ * YOU CAN WRITE ALL CSS HERE OR YOU CAN CREATE NEW CSS FILES AND IMPORT THEM HERE. IT IS UP TO YOU
+ */
+
+/* HEADER PATTERN ADDITIONS */
+
+.header-back-button:hover .border {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 168 218 / var(--tw-bg-opacity));
+}
+
+/* FOOTER PATTERN ADDITIONS */
+
+.footer {
+  --tw-bg-opacity: 1;
+  background-color: rgb(205 219 254 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+.footer .site-title {
+  --tw-text-opacity: 1;
+  color: rgb(63 63 70 / var(--tw-text-opacity));
+}
+
+.footer.darker {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 168 218 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(212 212 216 / var(--tw-text-opacity));
+}
+
+.footer.darker .site-title {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+/* 
+ * HERE YOU WRITTE CSS THAT IS GLOBAL FOR WHOLE SITE. 
+ * NOTE CSS THAT YOU PUT HERE WILL NOT BE PART OF ADMIN PANEL AND GUTENBERG EDITOR. 
+ * THIS IS ONLY FOR FRONTEND. 
+ */
+
+/* This is fix when using alignfull class since this is causing horisontal scrolling */
+
+main {
+  overflow-x: hidden;
+}
+
+/* Sticky footer */
+
+html, body {
+  height: 100%;
+}
+
+.wp-site-blocks {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 @media (min-width: 1024px) {

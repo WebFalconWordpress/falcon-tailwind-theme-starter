@@ -1,6 +1,13 @@
+@import "wordpress-normalizer.css";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "block-styles/buttons.css";
+@import "block-styles/index.css";
+@import "pattern-styles/index.css";
+
+/* 
+ * HERE YOU WRITTE CSS THAT IS GLOBAL FOR GUTENBERG EDITOR
+ * THIS IS ONLY FOR GUTENBERG. 
+ */
 
 
 .wp-block{

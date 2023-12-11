@@ -367,3 +367,10 @@ video {
     padding: 0;
   }
 }
+
+/* Remove block gap for one or more elements */
+.no-block-gap-for-children > *,
+.no-block-gap { 
+    margin-block-start: 0!important;
+    margin-block-end: 0!important;
+ } 

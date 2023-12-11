@@ -1,0 +1,35 @@
+
+/* 
+ *
+ * PUT HERE CSS THAT ARE CONNECTED WITH SOME PATTERN THAT YOU CREATED AND YOU CANNOT PUT THEM IN PATTERN CSS FILE FOR SOME REASON
+ * YOU CAN WRITE ALL CSS HERE OR YOU CAN CREATE NEW CSS FILES AND IMPORT THEM HERE. IT IS UP TO YOU
+ */
+
+
+
+/* HEADER PATTERN ADDITIONS */
+
+ .header-back-button:hover  {
+    .border {
+        @apply bg-contrast-3;
+    }
+ }
+
+
+ /* FOOTER PATTERN ADDITIONS */
+ 
+ .footer {
+    @apply bg-indigo-200 text-slate-500;
+
+    .site-title {
+        @apply text-zinc-700;
+    }
+ }
+ 
+ .footer.darker {
+    @apply bg-contrast-3 text-zinc-300;
+
+    .site-title {
+        @apply text-white;
+    }
+ }

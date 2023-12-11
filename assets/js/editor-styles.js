@@ -2,33 +2,34 @@
 
 wp.domReady( () => {
 
+
+	// Alternative Button Styles
 	wp.blocks.registerBlockStyle( 'core/button', {
-		name: 'cta-light',
-		label: 'CTA Light'
+		name: 'alternative',
+		label: 'Alternative'
 	} );
 
 	wp.blocks.registerBlockStyle( 'core/button', {
-		name: 'cta-light-outline',
-		label: 'CTA Light Outline'
+		name: 'alternative-outline',
+		label: 'Alternative Outline'
+	} );
+
+	// CTA Button Styles
+	wp.blocks.registerBlockStyle( 'core/button', {
+		name: 'cta',
+		label: 'CTA'
 	} );
 
 	wp.blocks.registerBlockStyle( 'core/button', {
-		name: 'cta-medium',
-		label: 'CTA Medium'
+		name: 'cta-outline',
+		label: 'CTA Outline'
 	} );
 
+	// Button as link
 	wp.blocks.registerBlockStyle( 'core/button', {
-		name: 'cta-medium-outline',
-		label: 'CTA Medium Outline'
+		name: 'link',
+		label: 'Link'
 	} );
-
-	wp.blocks.registerBlockStyle( 'core/button', {
-		name: 'cta-dark',
-		label: 'CTA Dark'
-	} );
-	wp.blocks.registerBlockStyle( 'core/button', {
-		name: 'cta-dark-outline',
-		label: 'CTA Dark Outline'
-	} );
+	
 
 } );

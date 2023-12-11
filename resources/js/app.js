@@ -9,4 +9,3 @@ window.addEventListener('load', function () {
             main_navigation.classList.toggle('hidden');
       });
 });
-  

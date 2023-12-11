@@ -1,0 +1,30 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; 
+@import "block-styles/index.css";
+@import "pattern-styles/index.css";
+
+
+/* 
+ * HERE YOU WRITTE CSS THAT IS GLOBAL FOR WHOLE SITE. 
+ * NOTE CSS THAT YOU PUT HERE WILL NOT BE PART OF ADMIN PANEL AND GUTENBERG EDITOR. 
+ * THIS IS ONLY FOR FRONTEND. 
+ */
+
+
+/* This is fix when using alignfull class since this is causing horisontal scrolling */
+main {
+    overflow-x: hidden;
+}
+
+/* Sticky footer */
+
+html, body {
+    height: 100%;
+}
+
+.wp-site-blocks {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}

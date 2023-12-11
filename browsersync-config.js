@@ -9,6 +9,6 @@ module.exports = {
         "change" 
     ],
     "proxy": {
-        target: "https://falconstarter.local/" // Enter your local WP URL here
+        target: "https://falcon-tailwind-wordpress-starter.local/" // Enter your local WP URL here
     },
 };
