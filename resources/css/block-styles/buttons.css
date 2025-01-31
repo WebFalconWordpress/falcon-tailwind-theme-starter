@@ -1,79 +1,121 @@
-/* These buttons are Style Variations definded ind editor-styles.js */
 .wp-block-buttons {
-
-
-    /* This is style needed for default outline style since we don't have hover on it by default */
-    .is-style-outline {
-        .wp-element-button.wp-block-button__link:hover {
-            @apply  border-contrast-3 text-contrast-3;
-        }
+    .wp-element-button.wp-block-button__link {
+      text-wrap: nowrap;
+    }
+  
+    .wp-block-button__link.wp-element-button:after,
+    .wp-block-button__link.wp-element-button:before {
+      @mixin fa-default-style;
+    }
+  
+    .wp-block-button[class*="btn-icon"] .wp-block-button__link.wp-element-button {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+  
+    .wp-block-button[class*="fa-"] {
+      display: flex;
+      align-items: center;
+      gap:0.5rem;
+    }
+  
+  
+  
+    /* In some cases we will need to redefine size of icon to bigger. Posible options will be 18 and 20 not more  */
+    .wp-block-button[class*="btn-icon-"][class~="text-14"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-button[class*="btn-icon-"][class~="text-14"] .wp-block-button__link.wp-element-button::after {
+      font-size: 14px;
+    }
+  
+    .wp-block-button[class*="btn-icon-"][class~="text-16"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-button[class*="btn-icon-"][class~="text-16"] .wp-block-button__link.wp-element-button::after {
+      font-size: 16px;
+    }
+  
+    .wp-block-button[class*="btn-icon-"][class~="text-18"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-button[class*="btn-icon-"][class~="text-18"] .wp-block-button__link.wp-element-button::after {
+      font-size: 18px;
+    }
+  
+    .wp-block-button[class*="btn-icon-"][class~="text-20"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-button[class*="btn-icon-"][class~="text-20"] .wp-block-button__link.wp-element-button::after {
+      font-size: 20px;
+    }
+  
+  
+    .wp-block-button[class*="btn-icon-"][class~="btn-light"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-button[class*="btn-icon-"][class~="btn-light"] .wp-block-button__link.wp-element-button::after {
+      font-weight: 300;
+    }
+  
+    .wp-block-button[class*="btn-icon-"][class~="btn-regular"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-button[class*="btn-icon-"][class~="btn-regular"] .wp-block-button__link.wp-element-button::after {
+      font-weight: 400;
+    }
+  
+    .wp-block-button[class*="btn-icon-"][class~="btn-solid"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-button[class*="btn-icon-"][class~="btn-solid"] .wp-block-button__link.wp-element-button::after {
+      font-weight: 900;
+    }
+  
+    /* In some case we will need to redefine button text size to different value */
+    .wp-block-button[class*="text-14"] .wp-block-button__link.wp-element-button {
+      font-size: 14px;
+    }
+  
+    .wp-block-button[class*="text-16"] .wp-block-button__link.wp-element-button {
+      font-size: 16px;
+    }
+  
+    .wp-block-button[class*="text-18"] .wp-block-button__link.wp-element-button {
+      font-size: 18px;
+    }
+  
+    .wp-block-button[class*="text-20"] .wp-block-button__link.wp-element-button {
+      font-size: 20px;
+    }
+  
+  
+    /* This is fix for icons that are part of LINK BUTTON and we don't want theme to be underlined. 
+      When adding btn-icon-SOME icon it will bepart of a tag and it will be uderlined. Option to get icon out is to use fontawesome default classes but than we need this fix so it looks god.
+    */
+    .is-style-link.wp-block-button[class*="fa-"]::after,
+    .is-style-link.wp-block-button[class*="fa-"]::before {
+      @apply text-contrast;
+    }
+  
+    .is-style-link.wp-block-button[class*="fa-"] .wp-block-button__link.wp-element-button {
+      padding-left: var(--wp--preset--spacing--1);
+      padding-right: var(--wp--preset--spacing--1);
     }
     
-
-    .is-style-alternative,
-    .is-style-alternative-outline,
-    .is-style-cta-outline,
-    .is-style-cta,
-    .is-style-link
-    {
-
-        .wp-element-button.wp-block-button__link {
-            @apply px-5 py-2.5 leading-tight text-sm;
-        }
+    .is-style-link.wp-block-button[class*="fa-"] .wp-block-button__link.wp-element-button:focus {
+      text-decoration: none;
+      padding-left: var(--wp--preset--spacing--1);
+      padding-right: var(--wp--preset--spacing--1);
     }
-
-    .is-style-cta {
-        .wp-element-button.wp-block-button__link {
-            @apply bg-contrast-3 border-contrast-3;
-        }
-
-        .wp-element-button.wp-block-button__link:hover {
-            @apply bg-contrast-2 border-contrast-2;
-        }
-
-    }
-
-    .is-style-cta-outline {
-        .wp-element-button.wp-block-button__link {
-            @apply bg-transparent border-contrast-3 text-contrast-3;
-        }
-
-        .wp-element-button.wp-block-button__link:hover {
-            @apply bg-transparent border-contrast-2 text-contrast-2;
-        }
-    }
-
-    .is-style-alternative {
- 
-        .wp-element-button.wp-block-button__link {
-            @apply bg-contrast-2 border-contrast-2;
-        }
-
-        .wp-element-button.wp-block-button__link:hover {
-            @apply bg-contrast-3 border-contrast-3;
-        }
-    }
-
-    .is-style-alternative-outline {  
- 
-        .wp-element-button.wp-block-button__link {
-            @apply bg-transparent border-contrast-2 text-contrast-2;
-        }
-
-        .wp-element-button.wp-block-button__link:hover {
-            @apply bg-transparent border-contrast-3 text-contrast-3;
-        }
-    }
-
-
+  
+  
     .is-style-link {
-        .wp-element-button.wp-block-button__link {
-            @apply bg-transparent underline border-0 text-xl font-semibold text-contrast-3 cursor-pointer underline-offset-[6px];
-        }
-        
-        .wp-element-button.wp-block-button__link:hover {
-            @apply text-contrast-2;
-        }
+      .wp-element-button.wp-block-button__link {
+        @apply underline-offset-[5px];
+      }
+  
+      .wp-element-button.wp-block-button__link:active,
+      .wp-element-button.wp-block-button__link:focus {
+        @mixin focus-bottom;
+      }
     }
+  
+  /* In some cases we need to make it smaller alike Apply button in header. By default default button is 48 height and outline is 40. So we sometimes need this trick if those two buttons are near one another */
+    .wp-block-button.make-it-small-as-outline-button .wp-block-button__link.wp-element-button {
+        padding-top: 11px;
+        padding-bottom: 11px;
+        line-height: 18px;
+    }
+  }
+  
 
-}
+  
+  

@@ -351,8 +351,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
 img,
 video {
-  max-width: 100%;
-  height: auto;
+  max-width: none;
+  height: revert-layer;
 }
 
 /* REMOVED but we should made this awaiable if tw class is on reset-list */
@@ -374,3 +374,20 @@ video {
     margin-block-start: 0!important;
     margin-block-end: 0!important;
  } 
+
+ /*
+ * Progressive enhancement to reduce widows and orphans
+ * https://github.com/WordPress/gutenberg/issues/55190
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+caption,
+figcaption,
+p {
+  text-wrap: pretty;
+}

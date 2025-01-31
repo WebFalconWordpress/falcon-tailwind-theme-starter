@@ -1,0 +1,44 @@
+@import "fontawesome.css";
+@import "fontawesome-after.css";
+@import "fontawesomebrands.css";
+@import "button-icons.css";
+@import "../mixins.css";
+
+:root,
+:host {
+  --fa-style-family-classic: "Font Awesome 6 Pro";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Pro";
+
+  --fa-style-family-brands: "Font Awesome 6 Brands";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+
+  --fa-style-family-classic: "Font Awesome 6 Pro";
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Pro";
+
+  --fa-style-family-classic: "Font Awesome 6 Pro";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Pro";
+}
+
+.far,
+.fa-regular {
+  font-weight: 400;
+}
+
+.fab,
+.fa-brands {
+  font-weight: 400;
+}
+
+.fas,
+.fa-solid {
+  font-weight: 900;
+}
+
+.fal,
+.fa-light {
+  font-weight: 300;
+}
+
+
+
+

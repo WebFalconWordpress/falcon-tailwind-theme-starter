@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Secondary Navigation",
+  "slug": "secondary-navigation",
+  "blockTypes": ["core/navigation"],
+  "styles": {
+    "elements": {
+      "link": {
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--contrast-3)"
+          },
+          "typography": {
+            "textDecoration": "underline"
+          }
+        },
+        "typography": {
+          "textDecoration": "none"
+        }
+      }
+    },
+    "typography": {
+      "lineHeight": "1.4",
+      "fontWeight": "400"
+    }
+  }
+}

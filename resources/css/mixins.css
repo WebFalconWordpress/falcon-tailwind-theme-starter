@@ -1,0 +1,23 @@
+@define-mixin focus-bottom {
+  text-decoration: none;
+  outline: none;
+  background-color: var(--tw-color-accent-4);
+  color: var(--tw-color-contrast-3);  
+  --tw-shadow: 0 0 var(--tw-color-accent-4), 0 3px var(--tw-color-contrast-3);
+  --tw-shadow-colored: 0 0 var(--tw-shadow-color), 0 3px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 var(--tw-color-contrast-3)),
+    var(--tw-ring-shadow, 0 0 var(--tw-color-contrast-3)), var(--tw-shadow);
+}
+
+
+@define-mixin fa-default-style $family: "Font Awesome 6 Pro" {
+  font-family: $family;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;  
+  font-size: 1rem;
+}

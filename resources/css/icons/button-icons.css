@@ -1,0 +1,1246 @@
+/* 
+
+MAP ALL ICONS WE HAVE SO THEY CAN BE USED WITH BUTTONS
+
+NOTE
+THIS IS GENERATED AUTOMATICALLY WITH CHATGPT. THIS IS PROMPT THAT WAS USED TO GENERATE THIS FILE
+
+Prompt:
+
+
+.fa-add::before { content: "\2b"; }
+.fa-arrow-down::before { content: "\f063"; }
+.fa-arrow-down-to-line::before { content: "\f33d"; }
+.fa-arrow-left::before { content: "\f060"; }
+-----PROVIDE FULL LIST OF fotntawesome defined icons in button-icons.css file-----
+
+
+Please extract contet and names from this into following format:
+
+.btn-icon-add-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\2b";
+  }
+}
+
+.btn-icon-arrow-down {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f063";
+  }
+}
+
+etc... 
+*/
+
+.btn-icon-add {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\2b";
+  }
+}
+
+.btn-icon-add-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\2b";
+  }
+}
+
+.btn-icon-arrow-down {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f063";
+  }
+}
+
+.btn-icon-arrow-down-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f063";
+  }
+}
+
+.btn-icon-arrow-down-to-line {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f33d";
+  }
+}
+
+.btn-icon-arrow-down-to-line-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f33d";
+  }
+}
+
+.btn-icon-arrow-left {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f060";
+  }
+}
+
+.btn-icon-arrow-left-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f060";
+  }
+}
+
+.btn-icon-arrow-right {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f061";
+  }
+}
+
+.btn-icon-arrow-right-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f061";
+  }
+}
+
+.btn-icon-arrow-to-bottom {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f33d";
+  }
+}
+
+.btn-icon-arrow-to-bottom-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f33d";
+  }
+}
+
+.btn-icon-arrow-up {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f062";
+  }
+}
+
+.btn-icon-arrow-up-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f062";
+  }
+}
+
+.btn-icon-arrow-up-from-bracket {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e09a";
+  }
+}
+
+.btn-icon-arrow-up-from-bracket-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e09a";
+  }
+}
+
+.btn-icon-arrows-rotate {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f021";
+  }
+}
+
+.btn-icon-arrows-rotate-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f021";
+  }
+}
+
+.btn-icon-at {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\40";
+  }
+}
+
+.btn-icon-at-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\40";
+  }
+}
+
+.btn-icon-bars {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f0c9";
+  }
+}
+
+.btn-icon-bars-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f0c9";
+  }
+}
+
+.btn-icon-building {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f1ad";
+  }
+}
+
+.btn-icon-building-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f1ad";
+  }
+}
+
+.btn-icon-bullhorn {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f0a1";
+  }
+}
+
+.btn-icon-bullhorn-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f0a1";
+  }
+}
+
+.btn-icon-chain {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f0c1";
+  }
+}
+
+.btn-icon-chain-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f0c1";
+  }
+}
+
+.btn-icon-chart-simple {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e473";
+  }
+}
+
+.btn-icon-chart-simple-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e473";
+  }
+}
+
+.btn-icon-check {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f00c";
+  }
+}
+
+.btn-icon-check-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f00c";
+  }
+}
+
+.btn-icon-check-circle {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f058";
+  }
+}
+
+.btn-icon-check-circle-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f058";
+  }
+}
+
+.btn-icon-chevron-down {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f078";
+  }
+}
+
+.btn-icon-chevron-down-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f078";
+  }
+}
+
+.btn-icon-chevron-left {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f053";
+  }
+}
+
+.btn-icon-chevron-left-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f053";
+  }
+}
+
+.btn-icon-chevron-right {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f054";
+  }
+}
+
+.btn-icon-chevron-right-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f054";
+  }
+}
+
+.btn-icon-chevron-up {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f077";
+  }
+}
+
+.btn-icon-chevron-up-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f077";
+  }
+}
+
+.btn-icon-circle-check {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f058";
+  }
+}
+
+.btn-icon-circle-check-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f058";
+  }
+}
+
+.btn-icon-circle-info {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f05a";
+  }
+}
+
+.btn-icon-circle-info-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f05a";
+  }
+}
+
+.btn-icon-circle-xmark {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f057";
+  }
+}
+
+.btn-icon-circle-xmark-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f057";
+  }
+}
+
+.btn-icon-close {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f00d";
+  }
+}
+
+.btn-icon-close-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f00d";
+  }
+}
+
+.btn-icon-cog {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f013";
+  }
+}
+
+.btn-icon-cog-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f013";
+  }
+}
+
+.btn-icon-comment {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f075";
+  }
+}
+
+.btn-icon-comment-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f075";
+  }
+}
+
+.btn-icon-comment-alt-dots {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f4a3";
+  }
+}
+
+.btn-icon-comment-alt-dots-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f4a3";
+  }
+}
+
+.btn-icon-crown {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f521";
+  }
+}
+
+.btn-icon-crown-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f521";
+  }
+}
+
+.btn-icon-dash {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e404";
+  }
+}
+
+.btn-icon-dash-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e404";
+  }
+}
+
+.btn-icon-edit {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f044";
+  }
+}
+
+.btn-icon-edit-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f044";
+  }
+}
+
+.btn-icon-ellipsis {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f141";
+  }
+}
+
+.btn-icon-ellipsis-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f141";
+  }
+}
+
+.btn-icon-ellipsis-h {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f141";
+  }
+}
+
+.btn-icon-ellipsis-h-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f141";
+  }
+}
+
+.btn-icon-envelope {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f0e0";
+  }
+}
+
+.btn-icon-envelope-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f0e0";
+  }
+}
+
+.btn-icon-exclamation-triangle {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f071";
+  }
+}
+
+.btn-icon-exclamation-triangle-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f071";
+  }
+}
+
+.btn-icon-eye {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f06e";
+  }
+}
+
+.btn-icon-eye-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f06e";
+  }
+}
+
+.btn-icon-filter {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f0b0";
+  }
+}
+
+.btn-icon-filter-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f0b0";
+  }
+}
+
+.btn-icon-gear {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f013";
+  }
+}
+
+.btn-icon-gear-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f013";
+  }
+}
+
+.btn-icon-globe {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f0ac";
+  }
+}
+
+.btn-icon-globe-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f0ac";
+  }
+}
+
+.btn-icon-grid-2 {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e196";
+  }
+}
+
+.btn-icon-grid-2-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e196";
+  }
+}
+
+.btn-icon-grip-lines-vertical {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f7a5";
+  }
+}
+
+.btn-icon-grip-lines-vertical-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f7a5";
+  }
+}
+
+.btn-icon-headphones {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f025";
+  }
+}
+
+.btn-icon-headphones-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f025";
+  }
+}
+
+.btn-icon-heart {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f004";
+  }
+}
+
+.btn-icon-heart-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f004";
+  }
+}
+
+.btn-icon-home {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f015";
+  }
+}
+
+.btn-icon-home-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f015";
+  }
+}
+
+.btn-icon-home-alt {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f015";
+  }
+}
+
+.btn-icon-home-alt-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f015";
+  }
+}
+
+.btn-icon-home-lg-alt {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f015";
+  }
+}
+
+.btn-icon-home-lg-alt-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f015";
+  }
+}
+
+.btn-icon-house {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f015";
+  }
+}
+
+.btn-icon-house-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f015";
+  }
+}
+
+.btn-icon-image {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f03e";
+  }
+}
+
+.btn-icon-image-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f03e";
+  }
+}
+
+.btn-icon-info-circle {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f05a";
+  }
+}
+
+.btn-icon-info-circle-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f05a";
+  }
+}
+
+.btn-icon-link {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f0c1";
+  }
+}
+
+.btn-icon-link-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f0c1";
+  }
+}
+
+.btn-icon-location-dot {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f3c5";
+  }
+}
+
+.btn-icon-location-dot-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f3c5";
+  }
+}
+
+.btn-icon-lock-alt {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f30d";
+  }
+}
+
+.btn-icon-lock-alt-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f30d";
+  }
+}
+
+.btn-icon-lock-keyhole {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f30d";
+  }
+}
+
+.btn-icon-lock-keyhole-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f30d";
+  }
+}
+
+.btn-icon-magnifying-glass {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f002";
+  }
+}
+
+.btn-icon-magnifying-glass-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f002";
+  }
+}
+
+.btn-icon-mail-forward {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f064";
+  }
+}
+
+.btn-icon-mail-forward-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f064";
+  }
+}
+
+.btn-icon-map-marker-alt {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f3c5";
+  }
+}
+
+.btn-icon-map-marker-alt-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f3c5";
+  }
+}
+
+.btn-icon-marker {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f5a1";
+  }
+}
+
+.btn-icon-marker-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f5a1";
+  }
+}
+
+.btn-icon-message-dots {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f4a3";
+  }
+}
+
+.btn-icon-message-dots-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f4a3";
+  }
+}
+
+.btn-icon-messaging {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f4a3";
+  }
+}
+
+.btn-icon-messaging-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f4a3";
+  }
+}
+
+.btn-icon-minus {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f068";
+  }
+}
+
+.btn-icon-minus-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f068";
+  }
+}
+
+.btn-icon-minus-large {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e404";
+  }
+}
+
+.btn-icon-minus-large-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e404";
+  }
+}
+
+.btn-icon-multiply {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f00d";
+  }
+}
+
+.btn-icon-multiply-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f00d";
+  }
+}
+
+.btn-icon-navicon {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f0c9";
+  }
+}
+
+.btn-icon-navicon-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f0c9";
+  }
+}
+
+.btn-icon-paperclip-vertical {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e3c2";
+  }
+}
+
+.btn-icon-paperclip-vertical-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e3c2";
+  }
+}
+
+.btn-icon-pen-to-square {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f044";
+  }
+}
+
+.btn-icon-pen-to-square-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f044";
+  }
+}
+
+.btn-icon-phone {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f095";
+  }
+}
+
+.btn-icon-phone-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f095";
+  }
+}
+
+.btn-icon-plus {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\2b";
+  }
+}
+
+.btn-icon-plus-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\2b";
+  }
+}
+
+.btn-icon-plus-large {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e59e";
+  }
+}
+
+.btn-icon-plus-large-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e59e";
+  }
+}
+
+.btn-icon-print {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f02f";
+  }
+}
+
+.btn-icon-print-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f02f";
+  }
+}
+
+.btn-icon-question {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\3f";
+  }
+}
+
+.btn-icon-question-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\3f";
+  }
+}
+
+.btn-icon-refresh {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f021";
+  }
+}
+
+.btn-icon-refresh-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f021";
+  }
+}
+
+.btn-icon-remove {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f00d";
+  }
+}
+
+.btn-icon-remove-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f00d";
+  }
+}
+
+.btn-icon-search {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f002";
+  }
+}
+
+.btn-icon-search-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f002";
+  }
+}
+
+.btn-icon-share {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f064";
+  }
+}
+
+.btn-icon-share-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f064";
+  }
+}
+
+.btn-icon-share-alt {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f1e0";
+  }
+}
+
+.btn-icon-share-alt-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f1e0";
+  }
+}
+
+.btn-icon-share-nodes {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f1e0";
+  }
+}
+
+.btn-icon-share-nodes-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f1e0";
+  }
+}
+
+.btn-icon-sheet-plastic {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e571";
+  }
+}
+
+.btn-icon-sheet-plastic-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e571";
+  }
+}
+
+.btn-icon-star {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f005";
+  }
+}
+
+.btn-icon-star-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f005";
+  }
+}
+
+.btn-icon-subtract {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f068";
+  }
+}
+
+.btn-icon-subtract-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f068";
+  }
+}
+
+.btn-icon-sync {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f021";
+  }
+}
+
+.btn-icon-sync-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f021";
+  }
+}
+
+.btn-icon-times {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f00d";
+  }
+}
+
+.btn-icon-times-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f00d";
+  }
+}
+
+.btn-icon-times-circle {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f057";
+  }
+}
+
+.btn-icon-times-circle-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f057";
+  }
+}
+
+.btn-icon-trash-alt {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f2ed";
+  }
+}
+
+.btn-icon-trash-alt-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f2ed";
+  }
+}
+
+.btn-icon-trash-can {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f2ed";
+  }
+}
+
+.btn-icon-trash-can-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f2ed";
+  }
+}
+
+.btn-icon-triangle-exclamation {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f071";
+  }
+}
+
+.btn-icon-triangle-exclamation-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f071";
+  }
+}
+
+.btn-icon-universal-access {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f29a";
+  }
+}
+
+.btn-icon-universal-access-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f29a";
+  }
+}
+
+.btn-icon-user {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f007";
+  }
+}
+
+.btn-icon-user-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f007";
+  }
+}
+
+.btn-icon-warning {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f071";
+  }
+}
+
+.btn-icon-warning-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f071";
+  }
+}
+
+.btn-icon-xmark {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f00d";
+  }
+}
+
+.btn-icon-xmark-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f00d";
+  }
+}
+
+.btn-icon-xmark-circle {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f057";
+  }
+}
+
+.btn-icon-xmark-circle-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f057";
+  }
+}
+
+.btn-icon-angle-down-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f107";
+  }
+}
+
+.btn-file-circle-question-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e4ef";
+  }
+}
+
+.btn-icon-facebook-square {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f082";
+  }
+}
+
+.btn-icon-facebook-square-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f082";
+  }
+}
+
+.btn-icon-flickr {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f16e";
+  }
+}
+
+.btn-icon-flickr-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f16e";
+  }
+}
+
+.btn-icon-instagram-square {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e055";
+  }
+}
+
+.btn-icon-instagram-square-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e055";
+  }
+}
+
+.btn-icon-square-facebook {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f082";
+  }
+}
+
+.btn-icon-square-facebook-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f082";
+  }
+}
+
+.btn-icon-square-instagram {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e055";
+  }
+}
+
+.btn-icon-square-instagram-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e055";
+  }
+}
+
+.btn-icon-square-twitter {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f081";
+  }
+}
+
+.btn-icon-square-twitter-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f081";
+  }
+}
+
+.btn-icon-square-x-twitter {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\e61a";
+  }
+}
+
+.btn-icon-square-x-twitter-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\e61a";
+  }
+}
+
+.btn-icon-square-youtube {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f431";
+  }
+}
+
+.btn-icon-square-youtube-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f431";
+  }
+}
+
+.btn-icon-twitter-square {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f081";
+  }
+}
+
+.btn-icon-twitter-square-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f081";
+  }
+}
+
+.btn-icon-youtube-square {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f431";
+  }
+}
+
+.btn-icon-youtube-square-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\f431", inherit, 1rem, inherit, inherit, "Font Awesome 6 Brands";
+  }
+  font-size: 1px;
+}

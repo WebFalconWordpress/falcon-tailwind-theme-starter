@@ -1,9 +1,10 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-@import "tailwindcss/utilities"; 
+@import "tailwindcss/utilities";
+@import "icons/index.css";
+@import "mixins.css";
 @import "block-styles/index.css";
 @import "pattern-styles/index.css";
-
 
 /* 
  * HERE YOU WRITTE CSS THAT IS GLOBAL FOR WHOLE SITE. 
@@ -11,20 +12,109 @@
  * THIS IS ONLY FOR FRONTEND. 
  */
 
-
 /* This is fix when using alignfull class since this is causing horisontal scrolling */
 main {
-    overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* Sticky footer */
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .wp-site-blocks {
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* 
+  This is helper function that will support block bindings for buttons. In wordpress 6.7 block bindings don't support bindings to class so this is workaround
+  This will hide button if there is not herf or if href is empty
+*/
+.has-block-api-bindings a.wp-block-button__link.wp-element-button:not([href]),
+.has-block-api-bindings a.wp-block-button__link.wp-element-button[href=""] {
+  display: none !important;
+}
+
+/* Remove outline offset from the submenus, otherwise the outline is visible outside the submenu container. */
+.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+  outline-offset: 0;
+}
+
+/* Increase the outline offset on the parent menu items, so that the outline does not touch the text. */
+.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+  outline-offset: 4px;
+}
+
+/* 
+In theme json is possible only to define global styles for a tags. But in many cases in content practice is that links are underlined 
+*/
+.single-post .wp-block-post-content a:where(:not(.wp-element-button)) {
+  @apply underline;
+}
+/* This util will be usefull for some places where we don't want to have underline. It can be used in some patterns */
+.not-underline a {
+  @apply no-underline hover:underline;
+}
+
+/* This is fix that will implement link focus but only for posts. But only for content that user is entering
+   We awoided PAGES because there might be a diffrent need so developer can implemnt that per block when needed 
+*/
+.single-post .wp-block-post-content a:where(:not(.wp-element-button)):focus {
+  @mixin focus-bottom;
+}
+
+/* 
+Styled scrollbar
+ */
+.styled-scrollbar {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(120, 120, 120, 0.1);
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(153, 153, 153, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  /* Make scroll bar more visible scrollbar track on hover */
+  :hover {
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
 }

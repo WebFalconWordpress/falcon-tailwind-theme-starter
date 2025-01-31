@@ -1,8 +1,9 @@
 module.exports = {
     plugins: [
-        require('postcss-nested-ancestors'),
         require('postcss-import'),
+        require('postcss-mixins'), // Enable mixins
         require('tailwindcss/nesting'),
-        require('tailwindcss')
+        require('tailwindcss'),
+        require('autoprefixer'), // Autoprefixer
     ]
 }

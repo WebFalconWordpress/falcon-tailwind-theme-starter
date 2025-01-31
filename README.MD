@@ -129,6 +129,7 @@ UPDATE MO - make sure you are positioned in languages folder
 wp i18n make-mo "languages/falcontwstarter-bs_BA.po"
 ```
 
+
 # Userful Links
 
 * [Tailwind CSS Documentation](https://tailwindcss.com/docs)

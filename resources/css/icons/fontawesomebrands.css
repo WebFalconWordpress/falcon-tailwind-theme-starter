@@ -1,0 +1,11 @@
+
+.fa-facebook-square::before { content: "\f082"; }
+.fa-flickr::before { content: "\f16e"; }
+.fa-instagram-square::before { content: "\e055"; }
+.fa-square-facebook::before { content: "\f082"; }
+.fa-square-instagram::before { content: "\e055"; }
+.fa-square-twitter::before { content: "\f081"; }
+.fa-square-x-twitter::before { content: "\e61a"; }
+.fa-square-youtube::before { content: "\f431"; }
+.fa-twitter-square::before { content: "\f081"; }
+.fa-youtube-square::before { content: "\f431"; }

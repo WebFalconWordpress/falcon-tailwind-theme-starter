@@ -2,6 +2,18 @@
 
 All notable changes to Falcon Tailwind Block Theme Starter will be documented in this file.
 
+## 1.1.1
+- Updated theme.json file to use new preset colors and spacing.
+- Updated theme.json file to new version used twentytwentyfive theme as a base.
+- Added Font Awesome icons implementation to the theme
+- Removed Flowbite implementation from the theme it is not needed anymore.
+- Updated all dependences in package.json file to latest versions
+- Change how buttons variations are added to the theme. Now we have a new folder styles/blocks where we have all the block styles for the theme.
+- Simplified buttons, now we have less variations and more simple styles.
+- Updated Readme.md file with new information.
+- Updated svg support for theme 
+- Updated functions.php we added latest settings that are also in new official wordpress twentytwentyfive theme
+
 ## 1.1.0
 - Added a `README.md` file with instructions on how to use this theme, how to use layout and all other useful information.
 - Worpdress Normalizer is now loaded only on the front-end using `wp_enqueue_scripts` hook. And in the editor it is part of editor-styles.css and loaded together with other editor styles.

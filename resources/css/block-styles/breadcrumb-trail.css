@@ -1,0 +1,29 @@
+/* 
+  THIS IS BREADCRUM TRRAIL FOR RESTRICTED USER PAGES
+*/
+#breadcrumb .container {
+  min-height: 4rem;
+}
+#breadcrumb .breadcrumbs {
+  @apply py-2 text-base md:flex md:items-center md:gap-2 text-contrast-3;
+}
+
+#breadcrumb .breadcrumbs a {
+  @apply text-base text-contrast-3 text-nowrap;
+}
+
+#breadcrumb .breadcrumbs span .current-item {
+  @apply line-clamp-1;
+}
+
+#breadcrumb .breadcrumbs .home {
+  @apply md:flex;
+}
+
+#breadcrumb .breadcrumbs .chevron {
+  @apply text-xs;
+}
+
+#breadcrumb .breadcrumbs > span:empty {
+  display: none;
+}

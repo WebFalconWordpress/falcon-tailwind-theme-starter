@@ -1,0 +1,110 @@
+
+/* 
+
+GENERATE FONT AWESOME AFTER SELECTOR. THIS IS GENERATE USSING CHATGPT and this is promt i was using
+
+.fa-add::before { content: "\2b"; }
+.fa-arrow-down::before { content: "\f063"; }
+
+-----PROVIDE FULL LIST OF fotntawesome defined icons in button-icons.css file-----
+
+Change before to be after and also add word -after to the name. here are a few examples 
+
+.fa-add-after::after{ content: "\2b"; } 
+.fa-arrow-down-after::after { content: "\f063"; } 
+etc...
+
+*/
+
+.fa-add-after::after { content: "\2b"; }
+.fa-arrow-down-after::after { content: "\f063"; }
+.fa-arrow-down-to-line-after::after { content: "\f33d"; }
+.fa-arrow-left-after::after { content: "\f060"; }
+.fa-arrow-right-after::after { content: "\f061"; }
+.fa-arrow-to-bottom-after::after { content: "\f33d"; }
+.fa-arrow-up-after::after { content: "\f062"; }
+.fa-arrow-up-from-bracket-after::after { content: "\e09a"; }
+.fa-arrows-rotate-after::after { content: "\f021"; }
+.fa-at-after::after { content: "\40"; }
+.fa-bars-after::after { content: "\f0c9"; }
+.fa-building-after::after { content: "\f1ad"; }
+.fa-bullhorn-after::after { content: "\f0a1"; }
+.fa-chain-after::after { content: "\f0c1"; }
+.fa-chart-simple-after::after { content: "\e473"; }
+.fa-check-after::after { content: "\f00c"; }
+.fa-check-circle-after::after { content: "\f058"; }
+.fa-chevron-down-after::after { content: "\f078"; }
+.fa-chevron-left-after::after { content: "\f053"; }
+.fa-chevron-right-after::after { content: "\f054"; }
+.fa-chevron-up-after::after { content: "\f077"; }
+.fa-circle-check-after::after { content: "\f058"; }
+.fa-circle-info-after::after { content: "\f05a"; }
+.fa-circle-xmark-after::after { content: "\f057"; }
+.fa-close-after::after { content: "\f00d"; }
+.fa-cog-after::after { content: "\f013"; }
+.fa-comment-after::after { content: "\f075"; }
+.fa-comment-alt-dots-after::after { content: "\f4a3"; }
+.fa-crown-after::after { content: "\f521"; }
+.fa-dash-after::after { content: "\e404"; }
+.fa-edit-after::after { content: "\f044"; }
+.fa-ellipsis-after::after { content: "\f141"; }
+.fa-ellipsis-h-after::after { content: "\f141"; }
+.fa-envelope-after::after { content: "\f0e0"; }
+.fa-exclamation-triangle-after::after { content: "\f071"; }
+.fa-eye-after::after { content: "\f06e"; }
+.fa-filter-after::after { content: "\f0b0"; }
+.fa-gear-after::after { content: "\f013"; }
+.fa-globe-after::after { content: "\f0ac"; }
+.fa-grid-2-after::after { content: "\e196"; }
+.fa-grip-lines-vertical-after::after { content: "\f7a5"; }
+.fa-headphones-after::after { content: "\f025"; }
+.fa-heart-after::after { content: "\f004"; }
+.fa-home-after::after { content: "\f015"; }
+.fa-home-alt-after::after { content: "\f015"; }
+.fa-home-lg-alt-after::after { content: "\f015"; }
+.fa-house-after::after { content: "\f015"; }
+.fa-image-after::after { content: "\f03e"; }
+.fa-info-circle-after::after { content: "\f05a"; }
+.fa-link-after::after { content: "\f0c1"; }
+.fa-location-dot-after::after { content: "\f3c5"; }
+.fa-lock-alt-after::after { content: "\f30d"; }
+.fa-lock-keyhole-after::after { content: "\f30d"; }
+.fa-magnifying-glass-after::after { content: "\f002"; }
+.fa-mail-forward-after::after { content: "\f064"; }
+.fa-map-marker-alt-after::after { content: "\f3c5"; }
+.fa-marker-after::after { content: "\f5a1"; }
+.fa-message-dots-after::after { content: "\f4a3"; }
+.fa-messaging-after::after { content: "\f4a3"; }
+.fa-minus-after::after { content: "\f068"; }
+.fa-minus-large-after::after { content: "\e404"; }
+.fa-multiply-after::after { content: "\f00d"; }
+.fa-navicon-after::after { content: "\f0c9"; }
+.fa-paperclip-vertical-after::after { content: "\e3c2"; }
+.fa-pen-to-square-after::after { content: "\f044"; }
+.fa-phone-after::after { content: "\f095"; }
+.fa-plus-after::after { content: "\2b"; }
+.fa-plus-large-after::after { content: "\e59e"; }
+.fa-print-after::after { content: "\f02f"; }
+.fa-question-after::after { content: "\3f"; }
+.fa-refresh-after::after { content: "\f021"; }
+.fa-remove-after::after { content: "\f00d"; }
+.fa-search-after::after { content: "\f002"; }
+.fa-share-after::after { content: "\f064"; }
+.fa-share-alt-after::after { content: "\f1e0"; }
+.fa-share-nodes-after::after { content: "\f1e0"; }
+.fa-sheet-plastic-after::after { content: "\e571"; }
+.fa-star-after::after { content: "\f005"; }
+.fa-subtract-after::after { content: "\f068"; }
+.fa-sync-after::after { content: "\f021"; }
+.fa-times-after::after { content: "\f00d"; }
+.fa-times-circle-after::after { content: "\f057"; }
+.fa-trash-alt-after::after { content: "\f2ed"; }
+.fa-trash-can-after::after { content: "\f2ed"; }
+.fa-triangle-exclamation-after::after { content: "\f071"; }
+.fa-universal-access-after::after { content: "\f29a"; }
+.fa-user-after::after { content: "\f007"; }
+.fa-warning-after::after { content: "\f071"; }
+.fa-xmark-after::after { content: "\f00d"; }
+.fa-xmark-circle-after::after { content: "\f057"; }
+.fa-angle-down-after::after { content: "\f107"; }
+.fa-file-circle-question-after::after { content: "\e4ef"; }

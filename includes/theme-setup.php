@@ -36,6 +36,9 @@ function falcontwstarter_setup() {
 	// This feature enables block styles which apply custom styles to block editor inside admin panel
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'assets/css/editor-styles.css' );
+
+	// Add support for Post Formats
+	add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
  
 	// Registers navigation menu locations for a theme.
 	register_nav_menus(
@@ -106,13 +109,22 @@ function falcontwstarter_asset( $path ) {
  * Adds option to upload SVG files.
  *
  */
-function add_file_types_to_uploads($file_types){
-    $new_filetypes = array();
-    $new_filetypes['svg'] = 'image/svg+xml';
-    $file_types = array_merge($file_types, $new_filetypes );
-    return $file_types;
+function cc_mime_types( $mimes ){
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
 }
-add_filter('upload_mimes', 'add_file_types_to_uploads');
+add_filter( 'upload_mimes', 'cc_mime_types' );
+
+// Fix SVG display in media library - ensure that SVG thumbnails display correctly in the media library
+function fix_svg_display() {
+    echo '<style type="text/css">
+        .attachment-266x266, .thumbnail img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>';
+}
+add_action( 'admin_head', 'fix_svg_display' );
 
 /**
  * Adds option 'li_class' to 'wp_nav_menu'.
@@ -181,7 +193,76 @@ add_filter( 'nav_menu_submenu_css_class', 'falcontwstarter_nav_menu_add_submenu_
 				'description' => __( 'A collection of full page layouts.' ),
 			)
 		);
+
+		register_block_pattern_category(
+			'twentytwentyfive_post-format',
+			array(
+				'label'       => __( 'Post formats', 'falcontwstarter' ),
+				'description' => __( 'A collection of post format patterns.', 'falcontwstarter' ),
+			)
+		);
 	}
 endif;
 
 add_action( 'init', 'falcontwstarter_pattern_categories' );
+
+// Registers block binding sources.
+if ( ! function_exists( 'twentytwentyfive_register_block_bindings' ) ) :
+	/**
+	 * Registers the post format block binding source.
+	 *
+	 * @since Twenty Twenty-Five 1.0
+	 *
+	 * @return void
+	 */
+	function twentytwentyfive_register_block_bindings() {
+		register_block_bindings_source(
+			'twentytwentyfive/format',
+			array(
+				'label'              => _x( 'Post format name', 'Label for the block binding placeholder in the editor', 'twentytwentyfive' ),
+				'get_value_callback' => 'falcontwstarter_format_binding',
+			)
+		);
+		register_block_bindings_source(
+			'falcontwstarter/format',
+			array(
+				'label'              => _x( 'Post format name', 'Label for the block binding placeholder in the editor', 'falcontwstarter' ),
+				'get_value_callback' => 'falcontwstarter_format_binding',
+			)
+		);
+	}
+endif;
+add_action( 'init', 'twentytwentyfive_register_block_bindings' );
+
+// Registers block binding callback function for the post format name.
+if ( ! function_exists( 'falcontwstarter_format_binding' ) ) :
+	/**
+	 * Callback function for the post format name block binding source.
+	 *
+	 * @since Twenty Twenty-Five 1.0
+	 *
+	 * @return string|void Post format name, or nothing if the format is 'standard'.
+	 */
+	function falcontwstarter_format_binding() {
+		$post_format_slug = get_post_format();
+
+		if ( $post_format_slug && 'standard' !== $post_format_slug ) {
+			return get_post_format_string( $post_format_slug );
+		}
+	}
+endif;
+
+function add_excerpts_to_pages()
+{
+	add_post_type_support('page', 'excerpt');
+}
+
+add_action('init', 'add_excerpts_to_pages');
+
+
+
+// Add wordpress svg support
+function falcontwstarter_svg_support() {
+    add_theme_support('svg-support');
+}
+add_action('init', 'falcontwstarter_svg_support');

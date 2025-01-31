@@ -351,8 +351,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
 img,
 video {
-  max-width: 100%;
-  height: auto;
+  max-width: none;
+  height: revert-layer;
 }
 
 /* REMOVED but we should made this awaiable if tw class is on reset-list */
@@ -371,6 +371,24 @@ video {
 .no-block-gap {
   margin-block-start: 0!important;
   margin-block-end: 0!important;
+}
+
+/*
+ * Progressive enhancement to reduce widows and orphans
+ * https://github.com/WordPress/gutenberg/issues/55190
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+caption,
+figcaption,
+p {
+  text-wrap: pretty;
 }
 
 .container {
@@ -470,8 +488,8 @@ video {
   visibility: collapse;
 }
 
-.static {
-  position: static;
+.absolute {
+  position: absolute;
 }
 
 .relative {
@@ -500,6 +518,14 @@ video {
   margin-bottom: 2rem;
 }
 
+.-mt-2px {
+  margin-top: -2px;
+}
+
+.-mt-px {
+  margin-top: -1px;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -514,10 +540,6 @@ video {
 
 .inline-block {
   display: inline-block;
-}
-
-.inline {
-  display: inline;
 }
 
 .flex {
@@ -540,6 +562,11 @@ video {
   display: none;
 }
 
+.size-full {
+  width: 100%;
+  height: 100%;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -548,24 +575,56 @@ video {
   height: 1.5rem;
 }
 
-.h-9 {
-  height: 2.25rem;
-}
-
 .h-full {
   height: 100%;
 }
 
-.w-1\/2 {
-  width: 50%;
+.h-half {
+  height: 50%;
+}
+
+.min-h-3\/4 {
+  min-height: 75vh;
+}
+
+.\!w-full {
+  width: 100% !important;
 }
 
 .w-6 {
   width: 1.5rem;
 }
 
-.w-64 {
-  width: 16rem;
+.w-full {
+  width: 100%;
+}
+
+.min-w-18 {
+  min-width: 4.5rem;
+}
+
+.min-w-30 {
+  min-width: 7.5rem;
+}
+
+.max-w-18 {
+  max-width: 4.5rem;
+}
+
+.max-w-20 {
+  max-width: 5rem;
+}
+
+.max-w-30 {
+  max-width: 7.5rem;
+}
+
+.max-w-half {
+  max-width: 50%;
+}
+
+.max-w-max {
+  max-width: 1920px;
 }
 
 .max-w-screen-md {
@@ -590,14 +649,6 @@ video {
 
 .resize {
   resize: both;
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-cols-7 {
-  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -632,33 +683,22 @@ video {
   gap: 0.5rem;
 }
 
-.rounded-l-lg {
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-}
-
-.rounded-r-lg {
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+.text-wrap {
+  text-wrap: wrap;
 }
 
 .border {
   border-width: 1px;
 }
 
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
 .bg-gray-50 {
   --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .p-0 {
@@ -668,6 +708,11 @@ video {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .py-4 {
@@ -700,9 +745,66 @@ video {
   text-align: center;
 }
 
+.text-12 {
+  font-size: 0.75rem;
+}
+
+.text-14 {
+  font-size: 0.875rem;
+}
+
+.text-16 {
+  font-size: 1rem;
+}
+
+.text-18 {
+  font-size: 1.125rem;
+}
+
+.text-20 {
+  font-size: 1.25rem;
+}
+
+.text-22 {
+  font-size: 1.375rem;
+}
+
+.text-24 {
+  font-size: 1.5rem;
+}
+
+.text-28 {
+  font-size: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-30 {
+  font-size: 1.875rem;
+}
+
+.text-32 {
+  font-size: 2rem;
+}
+
+.text-36 {
+  font-size: 2.25rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-40 {
+  font-size: 2.5rem;
+}
+
+.text-42 {
+  font-size: 2.625rem;
 }
 
 .text-7xl {
@@ -715,6 +817,14 @@ video {
   line-height: 1.5rem;
 }
 
+.text-display-lg {
+  font-size: 4.25rem;
+}
+
+.text-display-md {
+  font-size: 3rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -723,6 +833,36 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-title-lg {
+  font-size: 2rem;
+}
+
+.text-title-md {
+  font-size: 1.875rem;
+}
+
+.text-title-sm {
+  font-size: 1.75rem;
+}
+
+.text-title-xl {
+  font-size: 2.625rem;
+}
+
+.text-title-xs {
+  font-size: 1.5rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold {
@@ -745,14 +885,6 @@ video {
   text-transform: uppercase;
 }
 
-.leading-6 {
-  line-height: 1.5rem;
-}
-
-.leading-9 {
-  line-height: 2.25rem;
-}
-
 .leading-\[32px\] {
   line-height: 32px;
 }
@@ -763,40 +895,57 @@ video {
 
 .text-contrast {
   --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+}
+
+.text-contrast-3 {
+  --tw-text-opacity: 1;
+  color: rgb(15 168 218 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-500 {
   --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-900 {
   --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+  color: rgb(17 24 39 / var(--tw-text-opacity, 1));
 }
 
 .text-white {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .underline {
   text-decoration-line: underline;
 }
 
-.shadow-lg {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.no-underline {
+  text-decoration-line: none;
+}
+
+.underline-offset-\[5px\] {
+  text-underline-offset: 5px;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .outline {
   outline-style: solid;
 }
 
-.filter {
+.grayscale {
+  --tw-grayscale: grayscale(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .alignfull {
@@ -862,106 +1011,2353 @@ video {
 
 .wp-caption-text {
   font-size: 0.875rem;
-  color: #4B5563;
+  color: #4b5563;
 }
 
-/* These buttons are Style Variations definded ind editor-styles.js */
+.fa {
+  font-family: var(--fa-style-family, "Font Awesome 6 Pro");
+  font-weight: var(--fa-style, 900);
+}
 
-/* This is style needed for default outline style since we don't have hover on it by default */
+.fa-solid,
+.fa-regular,
+.fa-brands,
+.fas,
+.far,
+.fab,
+.fal,
+.fat,
+.fad,
+.fass,
+.fasr,
+.fasl,
+.fast,
+.fasds,
+.fa-light,
+.fa-thin,
+.fa-duotone,
+.fa-sharp,
+.fa-sharp-duotone,
+.fa-sharp-solid,
+.fa-classic,
+.fa {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
 
-.wp-block-buttons .is-style-outline .wp-element-button.wp-block-button__link:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(15 168 218 / var(--tw-border-opacity));
+.fas,
+.far,
+.fal,
+.fat,
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-thin,
+.fa-classic {
+  font-family: 'Font Awesome 6 Pro';
+}
+
+.fab,
+.fa-brands {
+  font-family: 'Font Awesome 6 Brands';
+}
+
+.fad,
+.fa-classic.fa-duotone,
+.fa-duotone {
+  font-family: 'Font Awesome 6 Duotone';
+}
+
+.fasds,
+.fa-sharp-duotone {
+  font-family: 'Font Awesome 6 Sharp Duotone';
+  font-weight: 900;
+}
+
+.fass,
+.fasr,
+.fasl,
+.fast,
+.fa-sharp {
+  font-family: 'Font Awesome 6 Sharp';
+}
+
+.fass,
+.fa-sharp {
+  font-weight: 900;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.08333em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.07143em;
+  vertical-align: 0.05357em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.04167em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(-1 * var(--fa-li-width, 2em));
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  animation-name: fa-beat;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  animation-name: fa-bounce;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  animation-name: fa-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  animation-name: fa-beat-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  animation-name: fa-flip;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  animation-name: fa-shake;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  animation-name: fa-spin;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 2s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  animation-name: fa-spin;
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+  .fa-bounce,
+  .fa-fade,
+  .fa-beat-fade,
+  .fa-flip,
+  .fa-pulse,
+  .fa-shake,
+  .fa-spin,
+  .fa-spin-pulse {
+    animation-delay: -1ms;
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+    transition-delay: 0s;
+    transition-duration: 0s;
+  }
+}
+
+@keyframes fa-beat {
+  0%, 90% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+
+@keyframes fa-bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  10% {
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+
+  30% {
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+
+  50% {
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+
+  57% {
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+
+@keyframes fa-flip {
+  50% {
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+
+@keyframes fa-shake {
+  0% {
+    transform: rotate(-15deg);
+  }
+
+  4% {
+    transform: rotate(15deg);
+  }
+
+  8%, 24% {
+    transform: rotate(-18deg);
+  }
+
+  12%, 28% {
+    transform: rotate(18deg);
+  }
+
+  16% {
+    transform: rotate(-22deg);
+  }
+
+  20% {
+    transform: rotate(22deg);
+  }
+
+  32% {
+    transform: rotate(-12deg);
+  }
+
+  36% {
+    transform: rotate(12deg);
+  }
+
+  40%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  transform: rotate(var(--fa-rotate-angle, 0));
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.fa-stack-1x {
+  line-height: inherit;
+}
+
+.fa-stack-2x {
+  font-size: 2em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+readers do not read off random characters that represent icons */
+
+.fa-add::before {
+  content: "\2b";
+}
+
+.fa-add-after::after {
+  content: "\2b";
+}
+
+.fa-arrow-down::before {
+  content: "\f063";
+}
+
+.fa-arrow-down-to-line::before {
+  content: "\f33d";
+}
+
+.fa-arrow-left::before {
+  content: "\f060";
+}
+
+.fa-arrow-right::before {
+  content: "\f061";
+}
+
+.fa-arrow-to-bottom::before {
+  content: "\f33d";
+}
+
+.fa-arrow-up::before {
+  content: "\f062";
+}
+
+.fa-arrow-up-from-bracket::before {
+  content: "\e09a";
+}
+
+.fa-arrows-rotate::before {
+  content: "\f021";
+}
+
+.fa-at::before {
+  content: "\40";
+}
+
+.fa-bars::before {
+  content: "\f0c9";
+}
+
+.fa-building::before {
+  content: "\f1ad";
+}
+
+.fa-bullhorn::before {
+  content: "\f0a1";
+}
+
+.fa-chain::before {
+  content: "\f0c1";
+}
+
+.fa-chart-simple::before {
+  content: "\e473";
+}
+
+.fa-check::before {
+  content: "\f00c";
+}
+
+.fa-check-circle::before {
+  content: "\f058";
+}
+
+.fa-chevron-down::before {
+  content: "\f078";
+}
+
+.fa-chevron-left::before {
+  content: "\f053";
+}
+
+.fa-chevron-right::before {
+  content: "\f054";
+}
+
+.fa-chevron-up::before {
+  content: "\f077";
+}
+
+.fa-circle-check::before {
+  content: "\f058";
+}
+
+.fa-circle-info::before {
+  content: "\f05a";
+}
+
+.fa-circle-xmark::before {
+  content: "\f057";
+}
+
+.fa-close::before {
+  content: "\f00d";
+}
+
+.fa-cog::before {
+  content: "\f013";
+}
+
+.fa-comment::before {
+  content: "\f075";
+}
+
+.fa-comment-alt-dots::before {
+  content: "\f4a3";
+}
+
+.fa-crown::before {
+  content: "\f521";
+}
+
+.fa-dash::before {
+  content: "\e404";
+}
+
+.fa-edit::before {
+  content: "\f044";
+}
+
+.fa-ellipsis::before {
+  content: "\f141";
+}
+
+.fa-ellipsis-h::before {
+  content: "\f141";
+}
+
+.fa-envelope::before {
+  content: "\f0e0";
+}
+
+.fa-exclamation-triangle::before {
+  content: "\f071";
+}
+
+.fa-eye::before {
+  content: "\f06e";
+}
+
+.fa-filter::before {
+  content: "\f0b0";
+}
+
+.fa-gear::before {
+  content: "\f013";
+}
+
+.fa-globe::before {
+  content: "\f0ac";
+}
+
+.fa-grid-2::before {
+  content: "\e196";
+}
+
+.fa-grip-lines-vertical::before {
+  content: "\f7a5";
+}
+
+.fa-headphones::before {
+  content: "\f025";
+}
+
+.fa-heart::before {
+  content: "\f004";
+}
+
+.fa-home::before {
+  content: "\f015";
+}
+
+.fa-home-alt::before {
+  content: "\f015";
+}
+
+.fa-home-lg-alt::before {
+  content: "\f015";
+}
+
+.fa-house::before {
+  content: "\f015";
+}
+
+.fa-image::before {
+  content: "\f03e";
+}
+
+.fa-info-circle::before {
+  content: "\f05a";
+}
+
+.fa-link::before {
+  content: "\f0c1";
+}
+
+.fa-location-dot::before {
+  content: "\f3c5";
+}
+
+.fa-lock-alt::before {
+  content: "\f30d";
+}
+
+.fa-lock-keyhole::before {
+  content: "\f30d";
+}
+
+.fa-magnifying-glass::before {
+  content: "\f002";
+}
+
+.fa-mail-forward::before {
+  content: "\f064";
+}
+
+.fa-map-marker-alt::before {
+  content: "\f3c5";
+}
+
+.fa-marker::before {
+  content: "\f5a1";
+}
+
+.fa-message-dots::before {
+  content: "\f4a3";
+}
+
+.fa-messaging::before {
+  content: "\f4a3";
+}
+
+.fa-minus::before {
+  content: "\f068";
+}
+
+.fa-minus-large::before {
+  content: "\e404";
+}
+
+.fa-multiply::before {
+  content: "\f00d";
+}
+
+.fa-navicon::before {
+  content: "\f0c9";
+}
+
+.fa-paperclip-vertical::before {
+  content: "\e3c2";
+}
+
+.fa-pen-to-square::before {
+  content: "\f044";
+}
+
+.fa-phone::before {
+  content: "\f095";
+}
+
+.fa-plus::before {
+  content: "\2b";
+}
+
+.fa-plus-large::before {
+  content: "\e59e";
+}
+
+.fa-print::before {
+  content: "\f02f";
+}
+
+.fa-question::before {
+  content: "\3f";
+}
+
+.fa-refresh::before {
+  content: "\f021";
+}
+
+.fa-remove::before {
+  content: "\f00d";
+}
+
+.fa-search::before {
+  content: "\f002";
+}
+
+.fa-share::before {
+  content: "\f064";
+}
+
+.fa-share-alt::before {
+  content: "\f1e0";
+}
+
+.fa-share-nodes::before {
+  content: "\f1e0";
+}
+
+.fa-sheet-plastic::before {
+  content: "\e571";
+}
+
+.fa-star::before {
+  content: "\f005";
+}
+
+.fa-subtract::before {
+  content: "\f068";
+}
+
+.fa-sync::before {
+  content: "\f021";
+}
+
+.fa-times::before {
+  content: "\f00d";
+}
+
+.fa-times-circle::before {
+  content: "\f057";
+}
+
+.fa-trash-alt::before {
+  content: "\f2ed";
+}
+
+.fa-trash-can::before {
+  content: "\f2ed";
+}
+
+.fa-triangle-exclamation::before {
+  content: "\f071";
+}
+
+.fa-universal-access::before {
+  content: "\f29a";
+}
+
+.fa-user::before {
+  content: "\f007";
+}
+
+.fa-warning::before {
+  content: "\f071";
+}
+
+.fa-xmark::before {
+  content: "\f00d";
+}
+
+.fa-xmark-circle::before {
+  content: "\f057";
+}
+
+.fa-angle-down::before {
+  content: "\f107";
+}
+
+.fa-file-circle-question::before {
+  content: "\e4ef";
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* 
+
+GENERATE FONT AWESOME AFTER SELECTOR. THIS IS GENERATE USSING CHATGPT and this is promt i was using
+
+.fa-add::before { content: "\2b"; }
+.fa-arrow-down::before { content: "\f063"; }
+
+-----PROVIDE FULL LIST OF fotntawesome defined icons in button-icons.css file-----
+
+Change before to be after and also add word -after to the name. here are a few examples 
+
+.fa-add-after::after{ content: "\2b"; } 
+.fa-arrow-down-after::after { content: "\f063"; } 
+etc...
+
+*/
+
+.fa-add-after::after {
+  content: "\2b";
+}
+
+.fa-arrow-down-after::after {
+  content: "\f063";
+}
+
+.fa-arrow-down-to-line-after::after {
+  content: "\f33d";
+}
+
+.fa-arrow-left-after::after {
+  content: "\f060";
+}
+
+.fa-arrow-right-after::after {
+  content: "\f061";
+}
+
+.fa-arrow-to-bottom-after::after {
+  content: "\f33d";
+}
+
+.fa-arrow-up-after::after {
+  content: "\f062";
+}
+
+.fa-arrow-up-from-bracket-after::after {
+  content: "\e09a";
+}
+
+.fa-arrows-rotate-after::after {
+  content: "\f021";
+}
+
+.fa-at-after::after {
+  content: "\40";
+}
+
+.fa-bars-after::after {
+  content: "\f0c9";
+}
+
+.fa-building-after::after {
+  content: "\f1ad";
+}
+
+.fa-bullhorn-after::after {
+  content: "\f0a1";
+}
+
+.fa-chain-after::after {
+  content: "\f0c1";
+}
+
+.fa-chart-simple-after::after {
+  content: "\e473";
+}
+
+.fa-check-after::after {
+  content: "\f00c";
+}
+
+.fa-check-circle-after::after {
+  content: "\f058";
+}
+
+.fa-chevron-down-after::after {
+  content: "\f078";
+}
+
+.fa-chevron-left-after::after {
+  content: "\f053";
+}
+
+.fa-chevron-right-after::after {
+  content: "\f054";
+}
+
+.fa-chevron-up-after::after {
+  content: "\f077";
+}
+
+.fa-circle-check-after::after {
+  content: "\f058";
+}
+
+.fa-circle-info-after::after {
+  content: "\f05a";
+}
+
+.fa-circle-xmark-after::after {
+  content: "\f057";
+}
+
+.fa-close-after::after {
+  content: "\f00d";
+}
+
+.fa-cog-after::after {
+  content: "\f013";
+}
+
+.fa-comment-after::after {
+  content: "\f075";
+}
+
+.fa-comment-alt-dots-after::after {
+  content: "\f4a3";
+}
+
+.fa-crown-after::after {
+  content: "\f521";
+}
+
+.fa-dash-after::after {
+  content: "\e404";
+}
+
+.fa-edit-after::after {
+  content: "\f044";
+}
+
+.fa-ellipsis-after::after {
+  content: "\f141";
+}
+
+.fa-ellipsis-h-after::after {
+  content: "\f141";
+}
+
+.fa-envelope-after::after {
+  content: "\f0e0";
+}
+
+.fa-exclamation-triangle-after::after {
+  content: "\f071";
+}
+
+.fa-eye-after::after {
+  content: "\f06e";
+}
+
+.fa-filter-after::after {
+  content: "\f0b0";
+}
+
+.fa-gear-after::after {
+  content: "\f013";
+}
+
+.fa-globe-after::after {
+  content: "\f0ac";
+}
+
+.fa-grid-2-after::after {
+  content: "\e196";
+}
+
+.fa-grip-lines-vertical-after::after {
+  content: "\f7a5";
+}
+
+.fa-headphones-after::after {
+  content: "\f025";
+}
+
+.fa-heart-after::after {
+  content: "\f004";
+}
+
+.fa-home-after::after {
+  content: "\f015";
+}
+
+.fa-home-alt-after::after {
+  content: "\f015";
+}
+
+.fa-home-lg-alt-after::after {
+  content: "\f015";
+}
+
+.fa-house-after::after {
+  content: "\f015";
+}
+
+.fa-image-after::after {
+  content: "\f03e";
+}
+
+.fa-info-circle-after::after {
+  content: "\f05a";
+}
+
+.fa-link-after::after {
+  content: "\f0c1";
+}
+
+.fa-location-dot-after::after {
+  content: "\f3c5";
+}
+
+.fa-lock-alt-after::after {
+  content: "\f30d";
+}
+
+.fa-lock-keyhole-after::after {
+  content: "\f30d";
+}
+
+.fa-magnifying-glass-after::after {
+  content: "\f002";
+}
+
+.fa-mail-forward-after::after {
+  content: "\f064";
+}
+
+.fa-map-marker-alt-after::after {
+  content: "\f3c5";
+}
+
+.fa-marker-after::after {
+  content: "\f5a1";
+}
+
+.fa-message-dots-after::after {
+  content: "\f4a3";
+}
+
+.fa-messaging-after::after {
+  content: "\f4a3";
+}
+
+.fa-minus-after::after {
+  content: "\f068";
+}
+
+.fa-minus-large-after::after {
+  content: "\e404";
+}
+
+.fa-multiply-after::after {
+  content: "\f00d";
+}
+
+.fa-navicon-after::after {
+  content: "\f0c9";
+}
+
+.fa-paperclip-vertical-after::after {
+  content: "\e3c2";
+}
+
+.fa-pen-to-square-after::after {
+  content: "\f044";
+}
+
+.fa-phone-after::after {
+  content: "\f095";
+}
+
+.fa-plus-after::after {
+  content: "\2b";
+}
+
+.fa-plus-large-after::after {
+  content: "\e59e";
+}
+
+.fa-print-after::after {
+  content: "\f02f";
+}
+
+.fa-question-after::after {
+  content: "\3f";
+}
+
+.fa-refresh-after::after {
+  content: "\f021";
+}
+
+.fa-remove-after::after {
+  content: "\f00d";
+}
+
+.fa-search-after::after {
+  content: "\f002";
+}
+
+.fa-share-after::after {
+  content: "\f064";
+}
+
+.fa-share-alt-after::after {
+  content: "\f1e0";
+}
+
+.fa-share-nodes-after::after {
+  content: "\f1e0";
+}
+
+.fa-sheet-plastic-after::after {
+  content: "\e571";
+}
+
+.fa-star-after::after {
+  content: "\f005";
+}
+
+.fa-subtract-after::after {
+  content: "\f068";
+}
+
+.fa-sync-after::after {
+  content: "\f021";
+}
+
+.fa-times-after::after {
+  content: "\f00d";
+}
+
+.fa-times-circle-after::after {
+  content: "\f057";
+}
+
+.fa-trash-alt-after::after {
+  content: "\f2ed";
+}
+
+.fa-trash-can-after::after {
+  content: "\f2ed";
+}
+
+.fa-triangle-exclamation-after::after {
+  content: "\f071";
+}
+
+.fa-universal-access-after::after {
+  content: "\f29a";
+}
+
+.fa-user-after::after {
+  content: "\f007";
+}
+
+.fa-warning-after::after {
+  content: "\f071";
+}
+
+.fa-xmark-after::after {
+  content: "\f00d";
+}
+
+.fa-xmark-circle-after::after {
+  content: "\f057";
+}
+
+.fa-angle-down-after::after {
+  content: "\f107";
+}
+
+.fa-file-circle-question-after::after {
+  content: "\e4ef";
+}
+
+.fa-facebook-square::before {
+  content: "\f082";
+}
+
+.fa-flickr::before {
+  content: "\f16e";
+}
+
+.fa-instagram-square::before {
+  content: "\e055";
+}
+
+.fa-square-facebook::before {
+  content: "\f082";
+}
+
+.fa-square-instagram::before {
+  content: "\e055";
+}
+
+.fa-square-twitter::before {
+  content: "\f081";
+}
+
+.fa-square-x-twitter::before {
+  content: "\e61a";
+}
+
+.fa-square-youtube::before {
+  content: "\f431";
+}
+
+.fa-twitter-square::before {
+  content: "\f081";
+}
+
+.fa-youtube-square::before {
+  content: "\f431";
+}
+
+/* 
+
+MAP ALL ICONS WE HAVE SO THEY CAN BE USED WITH BUTTONS
+
+NOTE
+THIS IS GENERATED AUTOMATICALLY WITH CHATGPT. THIS IS PROMPT THAT WAS USED TO GENERATE THIS FILE
+
+Prompt:
+
+
+.fa-add::before { content: "\2b"; }
+.fa-arrow-down::before { content: "\f063"; }
+.fa-arrow-down-to-line::before { content: "\f33d"; }
+.fa-arrow-left::before { content: "\f060"; }
+-----PROVIDE FULL LIST OF fotntawesome defined icons in button-icons.css file-----
+
+
+Please extract contet and names from this into following format:
+
+.btn-icon-add-after {
+  .wp-block-button__link.wp-element-button::after {
+    content: "\2b";
+  }
+}
+
+.btn-icon-arrow-down {
+  .wp-block-button__link.wp-element-button::before {
+    content: "\f063";
+  }
+}
+
+etc... 
+*/
+
+.btn-icon-add .wp-block-button__link.wp-element-button::before {
+  content: "\2b";
+}
+
+.btn-icon-add-after .wp-block-button__link.wp-element-button::after {
+  content: "\2b";
+}
+
+.btn-icon-arrow-down .wp-block-button__link.wp-element-button::before {
+  content: "\f063";
+}
+
+.btn-icon-arrow-down-after .wp-block-button__link.wp-element-button::after {
+  content: "\f063";
+}
+
+.btn-icon-arrow-down-to-line .wp-block-button__link.wp-element-button::before {
+  content: "\f33d";
+}
+
+.btn-icon-arrow-down-to-line-after .wp-block-button__link.wp-element-button::after {
+  content: "\f33d";
+}
+
+.btn-icon-arrow-left .wp-block-button__link.wp-element-button::before {
+  content: "\f060";
+}
+
+.btn-icon-arrow-left-after .wp-block-button__link.wp-element-button::after {
+  content: "\f060";
+}
+
+.btn-icon-arrow-right .wp-block-button__link.wp-element-button::before {
+  content: "\f061";
+}
+
+.btn-icon-arrow-right-after .wp-block-button__link.wp-element-button::after {
+  content: "\f061";
+}
+
+.btn-icon-arrow-to-bottom .wp-block-button__link.wp-element-button::before {
+  content: "\f33d";
+}
+
+.btn-icon-arrow-to-bottom-after .wp-block-button__link.wp-element-button::after {
+  content: "\f33d";
+}
+
+.btn-icon-arrow-up .wp-block-button__link.wp-element-button::before {
+  content: "\f062";
+}
+
+.btn-icon-arrow-up-after .wp-block-button__link.wp-element-button::after {
+  content: "\f062";
+}
+
+.btn-icon-arrow-up-from-bracket .wp-block-button__link.wp-element-button::before {
+  content: "\e09a";
+}
+
+.btn-icon-arrow-up-from-bracket-after .wp-block-button__link.wp-element-button::after {
+  content: "\e09a";
+}
+
+.btn-icon-arrows-rotate .wp-block-button__link.wp-element-button::before {
+  content: "\f021";
+}
+
+.btn-icon-arrows-rotate-after .wp-block-button__link.wp-element-button::after {
+  content: "\f021";
+}
+
+.btn-icon-at .wp-block-button__link.wp-element-button::before {
+  content: "\40";
+}
+
+.btn-icon-at-after .wp-block-button__link.wp-element-button::after {
+  content: "\40";
+}
+
+.btn-icon-bars .wp-block-button__link.wp-element-button::before {
+  content: "\f0c9";
+}
+
+.btn-icon-bars-after .wp-block-button__link.wp-element-button::after {
+  content: "\f0c9";
+}
+
+.btn-icon-building .wp-block-button__link.wp-element-button::before {
+  content: "\f1ad";
+}
+
+.btn-icon-building-after .wp-block-button__link.wp-element-button::after {
+  content: "\f1ad";
+}
+
+.btn-icon-bullhorn .wp-block-button__link.wp-element-button::before {
+  content: "\f0a1";
+}
+
+.btn-icon-bullhorn-after .wp-block-button__link.wp-element-button::after {
+  content: "\f0a1";
+}
+
+.btn-icon-chain .wp-block-button__link.wp-element-button::before {
+  content: "\f0c1";
+}
+
+.btn-icon-chain-after .wp-block-button__link.wp-element-button::after {
+  content: "\f0c1";
+}
+
+.btn-icon-chart-simple .wp-block-button__link.wp-element-button::before {
+  content: "\e473";
+}
+
+.btn-icon-chart-simple-after .wp-block-button__link.wp-element-button::after {
+  content: "\e473";
+}
+
+.btn-icon-check .wp-block-button__link.wp-element-button::before {
+  content: "\f00c";
+}
+
+.btn-icon-check-after .wp-block-button__link.wp-element-button::after {
+  content: "\f00c";
+}
+
+.btn-icon-check-circle .wp-block-button__link.wp-element-button::before {
+  content: "\f058";
+}
+
+.btn-icon-check-circle-after .wp-block-button__link.wp-element-button::after {
+  content: "\f058";
+}
+
+.btn-icon-chevron-down .wp-block-button__link.wp-element-button::before {
+  content: "\f078";
+}
+
+.btn-icon-chevron-down-after .wp-block-button__link.wp-element-button::after {
+  content: "\f078";
+}
+
+.btn-icon-chevron-left .wp-block-button__link.wp-element-button::before {
+  content: "\f053";
+}
+
+.btn-icon-chevron-left-after .wp-block-button__link.wp-element-button::after {
+  content: "\f053";
+}
+
+.btn-icon-chevron-right .wp-block-button__link.wp-element-button::before {
+  content: "\f054";
+}
+
+.btn-icon-chevron-right-after .wp-block-button__link.wp-element-button::after {
+  content: "\f054";
+}
+
+.btn-icon-chevron-up .wp-block-button__link.wp-element-button::before {
+  content: "\f077";
+}
+
+.btn-icon-chevron-up-after .wp-block-button__link.wp-element-button::after {
+  content: "\f077";
+}
+
+.btn-icon-circle-check .wp-block-button__link.wp-element-button::before {
+  content: "\f058";
+}
+
+.btn-icon-circle-check-after .wp-block-button__link.wp-element-button::after {
+  content: "\f058";
+}
+
+.btn-icon-circle-info .wp-block-button__link.wp-element-button::before {
+  content: "\f05a";
+}
+
+.btn-icon-circle-info-after .wp-block-button__link.wp-element-button::after {
+  content: "\f05a";
+}
+
+.btn-icon-circle-xmark .wp-block-button__link.wp-element-button::before {
+  content: "\f057";
+}
+
+.btn-icon-circle-xmark-after .wp-block-button__link.wp-element-button::after {
+  content: "\f057";
+}
+
+.btn-icon-close .wp-block-button__link.wp-element-button::before {
+  content: "\f00d";
+}
+
+.btn-icon-close-after .wp-block-button__link.wp-element-button::after {
+  content: "\f00d";
+}
+
+.btn-icon-cog .wp-block-button__link.wp-element-button::before {
+  content: "\f013";
+}
+
+.btn-icon-cog-after .wp-block-button__link.wp-element-button::after {
+  content: "\f013";
+}
+
+.btn-icon-comment .wp-block-button__link.wp-element-button::before {
+  content: "\f075";
+}
+
+.btn-icon-comment-after .wp-block-button__link.wp-element-button::after {
+  content: "\f075";
+}
+
+.btn-icon-comment-alt-dots .wp-block-button__link.wp-element-button::before {
+  content: "\f4a3";
+}
+
+.btn-icon-comment-alt-dots-after .wp-block-button__link.wp-element-button::after {
+  content: "\f4a3";
+}
+
+.btn-icon-crown .wp-block-button__link.wp-element-button::before {
+  content: "\f521";
+}
+
+.btn-icon-crown-after .wp-block-button__link.wp-element-button::after {
+  content: "\f521";
+}
+
+.btn-icon-dash .wp-block-button__link.wp-element-button::before {
+  content: "\e404";
+}
+
+.btn-icon-dash-after .wp-block-button__link.wp-element-button::after {
+  content: "\e404";
+}
+
+.btn-icon-edit .wp-block-button__link.wp-element-button::before {
+  content: "\f044";
+}
+
+.btn-icon-edit-after .wp-block-button__link.wp-element-button::after {
+  content: "\f044";
+}
+
+.btn-icon-ellipsis .wp-block-button__link.wp-element-button::before {
+  content: "\f141";
+}
+
+.btn-icon-ellipsis-after .wp-block-button__link.wp-element-button::after {
+  content: "\f141";
+}
+
+.btn-icon-ellipsis-h .wp-block-button__link.wp-element-button::before {
+  content: "\f141";
+}
+
+.btn-icon-ellipsis-h-after .wp-block-button__link.wp-element-button::after {
+  content: "\f141";
+}
+
+.btn-icon-envelope .wp-block-button__link.wp-element-button::before {
+  content: "\f0e0";
+}
+
+.btn-icon-envelope-after .wp-block-button__link.wp-element-button::after {
+  content: "\f0e0";
+}
+
+.btn-icon-exclamation-triangle .wp-block-button__link.wp-element-button::before {
+  content: "\f071";
+}
+
+.btn-icon-exclamation-triangle-after .wp-block-button__link.wp-element-button::after {
+  content: "\f071";
+}
+
+.btn-icon-eye .wp-block-button__link.wp-element-button::before {
+  content: "\f06e";
+}
+
+.btn-icon-eye-after .wp-block-button__link.wp-element-button::after {
+  content: "\f06e";
+}
+
+.btn-icon-filter .wp-block-button__link.wp-element-button::before {
+  content: "\f0b0";
+}
+
+.btn-icon-filter-after .wp-block-button__link.wp-element-button::after {
+  content: "\f0b0";
+}
+
+.btn-icon-gear .wp-block-button__link.wp-element-button::before {
+  content: "\f013";
+}
+
+.btn-icon-gear-after .wp-block-button__link.wp-element-button::after {
+  content: "\f013";
+}
+
+.btn-icon-globe .wp-block-button__link.wp-element-button::before {
+  content: "\f0ac";
+}
+
+.btn-icon-globe-after .wp-block-button__link.wp-element-button::after {
+  content: "\f0ac";
+}
+
+.btn-icon-grid-2 .wp-block-button__link.wp-element-button::before {
+  content: "\e196";
+}
+
+.btn-icon-grid-2-after .wp-block-button__link.wp-element-button::after {
+  content: "\e196";
+}
+
+.btn-icon-grip-lines-vertical .wp-block-button__link.wp-element-button::before {
+  content: "\f7a5";
+}
+
+.btn-icon-grip-lines-vertical-after .wp-block-button__link.wp-element-button::after {
+  content: "\f7a5";
+}
+
+.btn-icon-headphones .wp-block-button__link.wp-element-button::before {
+  content: "\f025";
+}
+
+.btn-icon-headphones-after .wp-block-button__link.wp-element-button::after {
+  content: "\f025";
+}
+
+.btn-icon-heart .wp-block-button__link.wp-element-button::before {
+  content: "\f004";
+}
+
+.btn-icon-heart-after .wp-block-button__link.wp-element-button::after {
+  content: "\f004";
+}
+
+.btn-icon-home .wp-block-button__link.wp-element-button::before {
+  content: "\f015";
+}
+
+.btn-icon-home-after .wp-block-button__link.wp-element-button::after {
+  content: "\f015";
+}
+
+.btn-icon-home-alt .wp-block-button__link.wp-element-button::before {
+  content: "\f015";
+}
+
+.btn-icon-home-alt-after .wp-block-button__link.wp-element-button::after {
+  content: "\f015";
+}
+
+.btn-icon-home-lg-alt .wp-block-button__link.wp-element-button::before {
+  content: "\f015";
+}
+
+.btn-icon-home-lg-alt-after .wp-block-button__link.wp-element-button::after {
+  content: "\f015";
+}
+
+.btn-icon-house .wp-block-button__link.wp-element-button::before {
+  content: "\f015";
+}
+
+.btn-icon-house-after .wp-block-button__link.wp-element-button::after {
+  content: "\f015";
+}
+
+.btn-icon-image .wp-block-button__link.wp-element-button::before {
+  content: "\f03e";
+}
+
+.btn-icon-image-after .wp-block-button__link.wp-element-button::after {
+  content: "\f03e";
+}
+
+.btn-icon-info-circle .wp-block-button__link.wp-element-button::before {
+  content: "\f05a";
+}
+
+.btn-icon-info-circle-after .wp-block-button__link.wp-element-button::after {
+  content: "\f05a";
+}
+
+.btn-icon-link .wp-block-button__link.wp-element-button::before {
+  content: "\f0c1";
+}
+
+.btn-icon-link-after .wp-block-button__link.wp-element-button::after {
+  content: "\f0c1";
+}
+
+.btn-icon-location-dot .wp-block-button__link.wp-element-button::before {
+  content: "\f3c5";
+}
+
+.btn-icon-location-dot-after .wp-block-button__link.wp-element-button::after {
+  content: "\f3c5";
+}
+
+.btn-icon-lock-alt .wp-block-button__link.wp-element-button::before {
+  content: "\f30d";
+}
+
+.btn-icon-lock-alt-after .wp-block-button__link.wp-element-button::after {
+  content: "\f30d";
+}
+
+.btn-icon-lock-keyhole .wp-block-button__link.wp-element-button::before {
+  content: "\f30d";
+}
+
+.btn-icon-lock-keyhole-after .wp-block-button__link.wp-element-button::after {
+  content: "\f30d";
+}
+
+.btn-icon-magnifying-glass .wp-block-button__link.wp-element-button::before {
+  content: "\f002";
+}
+
+.btn-icon-magnifying-glass-after .wp-block-button__link.wp-element-button::after {
+  content: "\f002";
+}
+
+.btn-icon-mail-forward .wp-block-button__link.wp-element-button::before {
+  content: "\f064";
+}
+
+.btn-icon-mail-forward-after .wp-block-button__link.wp-element-button::after {
+  content: "\f064";
+}
+
+.btn-icon-map-marker-alt .wp-block-button__link.wp-element-button::before {
+  content: "\f3c5";
+}
+
+.btn-icon-map-marker-alt-after .wp-block-button__link.wp-element-button::after {
+  content: "\f3c5";
+}
+
+.btn-icon-marker .wp-block-button__link.wp-element-button::before {
+  content: "\f5a1";
+}
+
+.btn-icon-marker-after .wp-block-button__link.wp-element-button::after {
+  content: "\f5a1";
+}
+
+.btn-icon-message-dots .wp-block-button__link.wp-element-button::before {
+  content: "\f4a3";
+}
+
+.btn-icon-message-dots-after .wp-block-button__link.wp-element-button::after {
+  content: "\f4a3";
+}
+
+.btn-icon-messaging .wp-block-button__link.wp-element-button::before {
+  content: "\f4a3";
+}
+
+.btn-icon-messaging-after .wp-block-button__link.wp-element-button::after {
+  content: "\f4a3";
+}
+
+.btn-icon-minus .wp-block-button__link.wp-element-button::before {
+  content: "\f068";
+}
+
+.btn-icon-minus-after .wp-block-button__link.wp-element-button::after {
+  content: "\f068";
+}
+
+.btn-icon-minus-large .wp-block-button__link.wp-element-button::before {
+  content: "\e404";
+}
+
+.btn-icon-minus-large-after .wp-block-button__link.wp-element-button::after {
+  content: "\e404";
+}
+
+.btn-icon-multiply .wp-block-button__link.wp-element-button::before {
+  content: "\f00d";
+}
+
+.btn-icon-multiply-after .wp-block-button__link.wp-element-button::after {
+  content: "\f00d";
+}
+
+.btn-icon-navicon .wp-block-button__link.wp-element-button::before {
+  content: "\f0c9";
+}
+
+.btn-icon-navicon-after .wp-block-button__link.wp-element-button::after {
+  content: "\f0c9";
+}
+
+.btn-icon-paperclip-vertical .wp-block-button__link.wp-element-button::before {
+  content: "\e3c2";
+}
+
+.btn-icon-paperclip-vertical-after .wp-block-button__link.wp-element-button::after {
+  content: "\e3c2";
+}
+
+.btn-icon-pen-to-square .wp-block-button__link.wp-element-button::before {
+  content: "\f044";
+}
+
+.btn-icon-pen-to-square-after .wp-block-button__link.wp-element-button::after {
+  content: "\f044";
+}
+
+.btn-icon-phone .wp-block-button__link.wp-element-button::before {
+  content: "\f095";
+}
+
+.btn-icon-phone-after .wp-block-button__link.wp-element-button::after {
+  content: "\f095";
+}
+
+.btn-icon-plus .wp-block-button__link.wp-element-button::before {
+  content: "\2b";
+}
+
+.btn-icon-plus-after .wp-block-button__link.wp-element-button::after {
+  content: "\2b";
+}
+
+.btn-icon-plus-large .wp-block-button__link.wp-element-button::before {
+  content: "\e59e";
+}
+
+.btn-icon-plus-large-after .wp-block-button__link.wp-element-button::after {
+  content: "\e59e";
+}
+
+.btn-icon-print .wp-block-button__link.wp-element-button::before {
+  content: "\f02f";
+}
+
+.btn-icon-print-after .wp-block-button__link.wp-element-button::after {
+  content: "\f02f";
+}
+
+.btn-icon-question .wp-block-button__link.wp-element-button::before {
+  content: "\3f";
+}
+
+.btn-icon-question-after .wp-block-button__link.wp-element-button::after {
+  content: "\3f";
+}
+
+.btn-icon-refresh .wp-block-button__link.wp-element-button::before {
+  content: "\f021";
+}
+
+.btn-icon-refresh-after .wp-block-button__link.wp-element-button::after {
+  content: "\f021";
+}
+
+.btn-icon-remove .wp-block-button__link.wp-element-button::before {
+  content: "\f00d";
+}
+
+.btn-icon-remove-after .wp-block-button__link.wp-element-button::after {
+  content: "\f00d";
+}
+
+.btn-icon-search .wp-block-button__link.wp-element-button::before {
+  content: "\f002";
+}
+
+.btn-icon-search-after .wp-block-button__link.wp-element-button::after {
+  content: "\f002";
+}
+
+.btn-icon-share .wp-block-button__link.wp-element-button::before {
+  content: "\f064";
+}
+
+.btn-icon-share-after .wp-block-button__link.wp-element-button::after {
+  content: "\f064";
+}
+
+.btn-icon-share-alt .wp-block-button__link.wp-element-button::before {
+  content: "\f1e0";
+}
+
+.btn-icon-share-alt-after .wp-block-button__link.wp-element-button::after {
+  content: "\f1e0";
+}
+
+.btn-icon-share-nodes .wp-block-button__link.wp-element-button::before {
+  content: "\f1e0";
+}
+
+.btn-icon-share-nodes-after .wp-block-button__link.wp-element-button::after {
+  content: "\f1e0";
+}
+
+.btn-icon-sheet-plastic .wp-block-button__link.wp-element-button::before {
+  content: "\e571";
+}
+
+.btn-icon-sheet-plastic-after .wp-block-button__link.wp-element-button::after {
+  content: "\e571";
+}
+
+.btn-icon-star .wp-block-button__link.wp-element-button::before {
+  content: "\f005";
+}
+
+.btn-icon-star-after .wp-block-button__link.wp-element-button::after {
+  content: "\f005";
+}
+
+.btn-icon-subtract .wp-block-button__link.wp-element-button::before {
+  content: "\f068";
+}
+
+.btn-icon-subtract-after .wp-block-button__link.wp-element-button::after {
+  content: "\f068";
+}
+
+.btn-icon-sync .wp-block-button__link.wp-element-button::before {
+  content: "\f021";
+}
+
+.btn-icon-sync-after .wp-block-button__link.wp-element-button::after {
+  content: "\f021";
+}
+
+.btn-icon-times .wp-block-button__link.wp-element-button::before {
+  content: "\f00d";
+}
+
+.btn-icon-times-after .wp-block-button__link.wp-element-button::after {
+  content: "\f00d";
+}
+
+.btn-icon-times-circle .wp-block-button__link.wp-element-button::before {
+  content: "\f057";
+}
+
+.btn-icon-times-circle-after .wp-block-button__link.wp-element-button::after {
+  content: "\f057";
+}
+
+.btn-icon-trash-alt .wp-block-button__link.wp-element-button::before {
+  content: "\f2ed";
+}
+
+.btn-icon-trash-alt-after .wp-block-button__link.wp-element-button::after {
+  content: "\f2ed";
+}
+
+.btn-icon-trash-can .wp-block-button__link.wp-element-button::before {
+  content: "\f2ed";
+}
+
+.btn-icon-trash-can-after .wp-block-button__link.wp-element-button::after {
+  content: "\f2ed";
+}
+
+.btn-icon-triangle-exclamation .wp-block-button__link.wp-element-button::before {
+  content: "\f071";
+}
+
+.btn-icon-triangle-exclamation-after .wp-block-button__link.wp-element-button::after {
+  content: "\f071";
+}
+
+.btn-icon-universal-access .wp-block-button__link.wp-element-button::before {
+  content: "\f29a";
+}
+
+.btn-icon-universal-access-after .wp-block-button__link.wp-element-button::after {
+  content: "\f29a";
+}
+
+.btn-icon-user .wp-block-button__link.wp-element-button::before {
+  content: "\f007";
+}
+
+.btn-icon-user-after .wp-block-button__link.wp-element-button::after {
+  content: "\f007";
+}
+
+.btn-icon-warning .wp-block-button__link.wp-element-button::before {
+  content: "\f071";
+}
+
+.btn-icon-warning-after .wp-block-button__link.wp-element-button::after {
+  content: "\f071";
+}
+
+.btn-icon-xmark .wp-block-button__link.wp-element-button::before {
+  content: "\f00d";
+}
+
+.btn-icon-xmark-after .wp-block-button__link.wp-element-button::after {
+  content: "\f00d";
+}
+
+.btn-icon-xmark-circle .wp-block-button__link.wp-element-button::before {
+  content: "\f057";
+}
+
+.btn-icon-xmark-circle-after .wp-block-button__link.wp-element-button::after {
+  content: "\f057";
+}
+
+.btn-icon-angle-down-after .wp-block-button__link.wp-element-button::after {
+  content: "\f107";
+}
+
+.btn-file-circle-question-after .wp-block-button__link.wp-element-button::after {
+  content: "\e4ef";
+}
+
+.btn-icon-facebook-square .wp-block-button__link.wp-element-button::before {
+  content: "\f082";
+}
+
+.btn-icon-facebook-square-after .wp-block-button__link.wp-element-button::after {
+  content: "\f082";
+}
+
+.btn-icon-flickr .wp-block-button__link.wp-element-button::before {
+  content: "\f16e";
+}
+
+.btn-icon-flickr-after .wp-block-button__link.wp-element-button::after {
+  content: "\f16e";
+}
+
+.btn-icon-instagram-square .wp-block-button__link.wp-element-button::before {
+  content: "\e055";
+}
+
+.btn-icon-instagram-square-after .wp-block-button__link.wp-element-button::after {
+  content: "\e055";
+}
+
+.btn-icon-square-facebook .wp-block-button__link.wp-element-button::before {
+  content: "\f082";
+}
+
+.btn-icon-square-facebook-after .wp-block-button__link.wp-element-button::after {
+  content: "\f082";
+}
+
+.btn-icon-square-instagram .wp-block-button__link.wp-element-button::before {
+  content: "\e055";
+}
+
+.btn-icon-square-instagram-after .wp-block-button__link.wp-element-button::after {
+  content: "\e055";
+}
+
+.btn-icon-square-twitter .wp-block-button__link.wp-element-button::before {
+  content: "\f081";
+}
+
+.btn-icon-square-twitter-after .wp-block-button__link.wp-element-button::after {
+  content: "\f081";
+}
+
+.btn-icon-square-x-twitter .wp-block-button__link.wp-element-button::before {
+  content: "\e61a";
+}
+
+.btn-icon-square-x-twitter-after .wp-block-button__link.wp-element-button::after {
+  content: "\e61a";
+}
+
+.btn-icon-square-youtube .wp-block-button__link.wp-element-button::before {
+  content: "\f431";
+}
+
+.btn-icon-square-youtube-after .wp-block-button__link.wp-element-button::after {
+  content: "\f431";
+}
+
+.btn-icon-twitter-square .wp-block-button__link.wp-element-button::before {
+  content: "\f081";
+}
+
+.btn-icon-twitter-square-after .wp-block-button__link.wp-element-button::after {
+  content: "\f081";
+}
+
+.btn-icon-youtube-square .wp-block-button__link.wp-element-button::before {
+  content: "\f431";
+}
+
+.btn-icon-youtube-square-after .wp-block-button__link.wp-element-button::after {
+  content: "\f431", inherit, 1rem, inherit, inherit, "Font Awesome 6 Brands";
+}
+
+.btn-icon-youtube-square-after {
+  font-size: 1px;
+}
+
+:root,
+:host {
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Pro";
+  --fa-style-family-brands: "Font Awesome 6 Brands";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Pro";
+  --fa-style-family-classic: "Font Awesome 6 Pro";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Pro";
+}
+
+.far,
+.fa-regular {
+  font-weight: 400;
+}
+
+.fab,
+.fa-brands {
+  font-weight: 400;
+}
+
+.fas,
+.fa-solid {
+  font-weight: 900;
+}
+
+.fal,
+.fa-light {
+  font-weight: 300;
+}
+
+.wp-block-buttons .wp-element-button.wp-block-button__link {
+  text-wrap: nowrap;
+}
+
+.wp-block-buttons .wp-block-button__link.wp-element-button:after,
+    .wp-block-buttons .wp-block-button__link.wp-element-button:before {
+  font-family: "Font Awesome 6 Pro";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  font-size: 1rem;
+}
+
+.wp-block-buttons .wp-block-button[class*="btn-icon"] .wp-block-button__link.wp-element-button {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.wp-block-buttons .wp-block-button[class*="fa-"] {
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+}
+
+/* In some cases we will need to redefine size of icon to bigger. Posible options will be 18 and 20 not more  */
+
+.wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="text-14"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="text-14"] .wp-block-button__link.wp-element-button::after {
+  font-size: 14px;
+}
+
+.wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="text-16"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="text-16"] .wp-block-button__link.wp-element-button::after {
+  font-size: 16px;
+}
+
+.wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="text-18"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="text-18"] .wp-block-button__link.wp-element-button::after {
+  font-size: 18px;
+}
+
+.wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="text-20"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="text-20"] .wp-block-button__link.wp-element-button::after {
+  font-size: 20px;
+}
+
+.wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="btn-light"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="btn-light"] .wp-block-button__link.wp-element-button::after {
+  font-weight: 300;
+}
+
+.wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="btn-regular"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="btn-regular"] .wp-block-button__link.wp-element-button::after {
+  font-weight: 400;
+}
+
+.wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="btn-solid"] .wp-block-button__link.wp-element-button::before, 
+    .wp-block-buttons .wp-block-button[class*="btn-icon-"][class~="btn-solid"] .wp-block-button__link.wp-element-button::after {
+  font-weight: 900;
+}
+
+/* In some case we will need to redefine button text size to different value */
+
+.wp-block-buttons .wp-block-button[class*="text-14"] .wp-block-button__link.wp-element-button {
+  font-size: 14px;
+}
+
+.wp-block-buttons .wp-block-button[class*="text-16"] .wp-block-button__link.wp-element-button {
+  font-size: 16px;
+}
+
+.wp-block-buttons .wp-block-button[class*="text-18"] .wp-block-button__link.wp-element-button {
+  font-size: 18px;
+}
+
+.wp-block-buttons .wp-block-button[class*="text-20"] .wp-block-button__link.wp-element-button {
+  font-size: 20px;
+}
+
+/* This is fix for icons that are part of LINK BUTTON and we don't want theme to be underlined. 
+      When adding btn-icon-SOME icon it will bepart of a tag and it will be uderlined. Option to get icon out is to use fontawesome default classes but than we need this fix so it looks god.
+    */
+
+.wp-block-buttons .is-style-link.wp-block-button[class*="fa-"]::after,
+    .wp-block-buttons .is-style-link.wp-block-button[class*="fa-"]::before {
   --tw-text-opacity: 1;
-  color: rgb(15 168 218 / var(--tw-text-opacity));
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
 }
 
-.wp-block-buttons .is-style-alternative .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-alternative-outline .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-cta-outline .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-cta .wp-element-button.wp-block-button__link, .wp-block-buttons .is-style-link .wp-element-button.wp-block-button__link {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  line-height: 1.25;
+.wp-block-buttons .is-style-link.wp-block-button[class*="fa-"] .wp-block-button__link.wp-element-button {
+  padding-left: var(--wp--preset--spacing--1);
+  padding-right: var(--wp--preset--spacing--1);
 }
 
-.wp-block-buttons .is-style-cta .wp-element-button.wp-block-button__link {
-  --tw-border-opacity: 1;
-  border-color: rgb(15 168 218 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 168 218 / var(--tw-bg-opacity));
-}
-
-.wp-block-buttons .is-style-cta .wp-element-button.wp-block-button__link:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(26 86 219 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 86 219 / var(--tw-bg-opacity));
-}
-
-.wp-block-buttons .is-style-cta-outline .wp-element-button.wp-block-button__link {
-  --tw-border-opacity: 1;
-  border-color: rgb(15 168 218 / var(--tw-border-opacity));
-  background-color: transparent;
-  --tw-text-opacity: 1;
-  color: rgb(15 168 218 / var(--tw-text-opacity));
-}
-
-.wp-block-buttons .is-style-cta-outline .wp-element-button.wp-block-button__link:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(26 86 219 / var(--tw-border-opacity));
-  background-color: transparent;
-  --tw-text-opacity: 1;
-  color: rgb(26 86 219 / var(--tw-text-opacity));
-}
-
-.wp-block-buttons .is-style-alternative .wp-element-button.wp-block-button__link {
-  --tw-border-opacity: 1;
-  border-color: rgb(26 86 219 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 86 219 / var(--tw-bg-opacity));
-}
-
-.wp-block-buttons .is-style-alternative .wp-element-button.wp-block-button__link:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(15 168 218 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 168 218 / var(--tw-bg-opacity));
-}
-
-.wp-block-buttons .is-style-alternative-outline .wp-element-button.wp-block-button__link {
-  --tw-border-opacity: 1;
-  border-color: rgb(26 86 219 / var(--tw-border-opacity));
-  background-color: transparent;
-  --tw-text-opacity: 1;
-  color: rgb(26 86 219 / var(--tw-text-opacity));
-}
-
-.wp-block-buttons .is-style-alternative-outline .wp-element-button.wp-block-button__link:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(15 168 218 / var(--tw-border-opacity));
-  background-color: transparent;
-  --tw-text-opacity: 1;
-  color: rgb(15 168 218 / var(--tw-text-opacity));
+.wp-block-buttons .is-style-link.wp-block-button[class*="fa-"] .wp-block-button__link.wp-element-button:focus {
+  text-decoration: none;
+  padding-left: var(--wp--preset--spacing--1);
+  padding-right: var(--wp--preset--spacing--1);
 }
 
 .wp-block-buttons .is-style-link .wp-element-button.wp-block-button__link {
-  cursor: pointer;
-  border-width: 0px;
-  background-color: transparent;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-  --tw-text-opacity: 1;
-  color: rgb(15 168 218 / var(--tw-text-opacity));
-  text-decoration-line: underline;
-  text-underline-offset: 6px;
+  text-underline-offset: 5px;
 }
 
-.wp-block-buttons .is-style-link .wp-element-button.wp-block-button__link:hover {
+.wp-block-buttons .is-style-link .wp-element-button.wp-block-button__link:active,
+      .wp-block-buttons .is-style-link .wp-element-button.wp-block-button__link:focus {
+  text-decoration: none;
+  outline: none;
+  background-color: var(--tw-color-accent-4);
+  color: var(--tw-color-contrast-3);
+  --tw-shadow: 0 0 var(--tw-color-accent-4), 0 3px var(--tw-color-contrast-3);
+  --tw-shadow-colored: 0 0 var(--tw-shadow-color), 0 3px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 var(--tw-color-contrast-3)),
+    var(--tw-ring-shadow, 0 0 var(--tw-color-contrast-3)), var(--tw-shadow);
+}
+
+/* In some cases we need to make it smaller alike Apply button in header. By default default button is 48 height and outline is 40. So we sometimes need this trick if those two buttons are near one another */
+
+.wp-block-buttons .wp-block-button.make-it-small-as-outline-button .wp-block-button__link.wp-element-button {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  line-height: 18px;
+}
+
+/* 
+  THIS IS BREADCRUM TRRAIL FOR RESTRICTED USER PAGES
+*/
+
+#breadcrumb .container {
+  min-height: 4rem;
+}
+
+#breadcrumb .breadcrumbs {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   --tw-text-opacity: 1;
-  color: rgb(26 86 219 / var(--tw-text-opacity));
+  color: rgb(15 168 218 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 768px) {
+  #breadcrumb .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+#breadcrumb .breadcrumbs a {
+  text-wrap: nowrap;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(15 168 218 / var(--tw-text-opacity, 1));
+}
+
+#breadcrumb .breadcrumbs span .current-item {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+@media (min-width: 768px) {
+  #breadcrumb .breadcrumbs .home {
+    display: flex;
+  }
+}
+
+#breadcrumb .breadcrumbs .chevron {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+#breadcrumb .breadcrumbs > span:empty {
+  display: none;
 }
 
 /* 
@@ -969,39 +3365,6 @@ video {
  * PUT HERE CSS THAT ARE CONNECTED WITH SOME PATTERN THAT YOU CREATED AND YOU CANNOT PUT THEM IN PATTERN CSS FILE FOR SOME REASON
  * YOU CAN WRITE ALL CSS HERE OR YOU CAN CREATE NEW CSS FILES AND IMPORT THEM HERE. IT IS UP TO YOU
  */
-
-/* HEADER PATTERN ADDITIONS */
-
-.header-back-button:hover .border {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 168 218 / var(--tw-bg-opacity));
-}
-
-/* FOOTER PATTERN ADDITIONS */
-
-.footer {
-  --tw-bg-opacity: 1;
-  background-color: rgb(205 219 254 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(100 116 139 / var(--tw-text-opacity));
-}
-
-.footer .site-title {
-  --tw-text-opacity: 1;
-  color: rgb(63 63 70 / var(--tw-text-opacity));
-}
-
-.footer.darker {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 168 218 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(212 212 216 / var(--tw-text-opacity));
-}
-
-.footer.darker .site-title {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
 
 /* 
  * HERE YOU WRITTE CSS THAT IS GLOBAL FOR GUTENBERG EDITOR
@@ -1018,6 +3381,43 @@ video {
 
 .wp-block[data-align=full] {
   max-width: 100%;
+}
+
+/* 
+In theme json is possible only to define global styles for a tags. But in many cases in content practice is that links are underlined 
+We Apply also underline to all links in Gutenberg editor for all blocks that are not buttons
+*/
+
+.wp-block-post-content .wp-block a:where(:not(.wp-element-button)) {
+  text-decoration-line: underline;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+
+a {
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: .1em;
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:items-center {
+    align-items: center;
+  }
+
+  .md\:gap-2 {
+    gap: 0.5rem;
+  }
 }
 
 @media (min-width: 1024px) {

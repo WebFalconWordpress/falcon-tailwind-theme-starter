@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Link",
+  "slug": "link",
+  "blockTypes": ["core/button"],
+  "styles": {
+    "elements": {
+      "button": {
+        ":active": {
+         "outline":{
+            "width": "0px"
+         },
+          "color": {
+            "background": "var:preset|color|accent-4!important",
+            "text": "var:preset|color|contrast-3!important"
+          }
+        },
+        ":focus": {
+          "color": {
+            "background": "var:preset|color|accent-4!important",
+            "text": "var:preset|color|contrast-3!important"
+          }
+        },
+        ":hover": {
+          "color": {
+            "text": "var:preset|color|contrast-5!important"
+          }
+        }
+      } 
+    },
+    "border": {
+      "width": "0",
+      "style": "none",
+      "radius": "0px"
+    },
+    "color": {
+      "background": "transparent",
+      "text": "var:preset|color|contrast"
+    },
+    "spacing": {
+      "padding": {
+        "bottom": "var:preset|spacing|2",
+        "top": "var:preset|spacing|2",
+        "left": "var:preset|spacing|2",
+        "right": "var:preset|spacing|2"
+      }
+    },
+    "typography": {
+      "textDecoration": "underline"
+    }
+  }
+}
