@@ -5,12 +5,6 @@
  */
 function falcontwstarter_setup() { 
 
-	// load only inf it is not the admin area
-	if ( ! is_admin() ) {
-		// Load the theme stylesheet.
-		wp_enqueue_style( 'falcontwstarter_normalizer', falcontwstarter_asset( 'assets/css/wordpress-normalizer.css' ) );
-	}
-
 	// Load translations for This template
 	load_theme_textdomain('falcontwstarter', get_template_directory() . '/languages');
 	 
@@ -50,6 +44,21 @@ function falcontwstarter_setup() {
 }
 
 add_action( 'after_setup_theme', 'falcontwstarter_setup' );
+
+
+/**
+ * Enqueue  WordPress Normalizer. We are adding this ealeir before all sytles so that we can override some of the default styles later.
+ */
+function pubcalls_normalizer()
+{
+	// load only inf it is not the admin area
+	if (!is_admin()) {
+		// Load the theme stylesheet.
+		wp_enqueue_style( 'falcontwstarter_normalizer', falcontwstarter_asset( 'assets/css/wordpress-normalizer.css' ) );
+	}
+}
+
+add_action('init', 'falcontwstarter_normalizer');
  
 
 
